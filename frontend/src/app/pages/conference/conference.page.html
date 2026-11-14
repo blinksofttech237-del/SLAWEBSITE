@@ -1,0 +1,263 @@
+<app-page-hero
+  [kicker]="i18n.t('conference.hero.kicker')"
+  [title]="i18n.t('conference.hero.title')"
+  [lead]="i18n.t('conference.hero.lead')"
+  image="conference-stage"
+  [meta]="[i18n.loc('Photographie', 'Photography'), i18n.loc('Vidéo multicaméra', 'Multi-camera video'), i18n.loc('Streaming', 'Live streaming')]"
+  [ctaLabel]="i18n.t('cta.bookConferenceCoverage')"
+  ctaPath="/devis"
+  [ctaQueryParams]="{ service: 'couverture-conferences' }"
+/>
+
+<section class="section section--paper conference-intro">
+  <div class="shell split split--60-40">
+    <div class="conference-intro__copy" appReveal="up">
+      <span class="eyebrow">{{ i18n.t('conference.intro.eyebrow') }}</span>
+      <h2 class="h2">{{ i18n.t('conference.intro.title') }}</h2>
+      <p class="lead">
+        {{ i18n.loc('Une conférence ne se rejoue pas. Chaque prise de parole, chaque échange, chaque image doit être captée avec méthode et restituée avec soin.', 'A conference cannot be replayed. Every speech, every exchange, every image must be captured methodically and delivered with care.') }}
+      </p>
+      <p class="conference-intro__body">
+        {{ i18n.loc('SELECTA EMPIRE déploie une équipe pluridisciplinaire — photographes, cadreurs, ingénieurs du son, régie streaming — pour couvrir votre événement sans angle mort. Nous travaillons en amont avec vos équipes pour comprendre le protocole, les temps forts et les contraintes du lieu.', 'SELECTA EMPIRE deploys a multidisciplinary team — photographers, camera operators, sound engineers, streaming control room — to cover your event without blind spots. We work upstream with your teams to understand protocol, key moments and venue constraints.') }}
+      </p>
+      <div class="conference-intro__chips">
+        @for (client of content.settings().institutionalClients.slice(0, 5); track client) {
+          <span class="chip">{{ client }}</span>
+        }
+      </div>
+    </div>
+    <div class="conference-intro__media bracket-frame" appReveal="right">
+      <app-img name="conference-audience" [alt]="i18n.t('conference.intro.title')" sizes="(max-width: 1024px) 100vw, 40vw" />
+      <div class="conference-intro__stamp">
+        <span class="eyebrow eyebrow--light eyebrow--plain">SLA</span>
+        <strong>YOUR EVENT.<br />OUR PRODUCTION.<br />ONE TEAM.</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft conference-pillars" aria-labelledby="conf-pillars-title">
+  <div class="shell">
+    <div class="section-head section-head--center" appReveal="up">
+      <div class="section-head__copy">
+        <span class="eyebrow">{{ i18n.t('conference.pillars.eyebrow') }}</span>
+        <h2 id="conf-pillars-title" class="h2">{{ i18n.t('conference.pillars.title') }}</h2>
+      </div>
+    </div>
+
+    <div class="conference-pillars__grid">
+      @for (pillar of pillars(); track pillar.title; let i = $index) {
+        <article class="conference-pillar" appReveal="up" [revealDelay]="i * 60">
+          <span class="conference-pillar__num">0{{ i + 1 }}</span>
+          <span class="icon-tile"><app-icon [name]="pillar.icon" [size]="22" /></span>
+          <h3>{{ pillar.title }}</h3>
+          <p>{{ pillar.text }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="conference-team on-dark" aria-labelledby="conf-team-title">
+  <div class="blueprint" aria-hidden="true"></div>
+  <div class="shell conference-team__inner">
+    <div class="conference-team__head" appReveal="up">
+      <span class="eyebrow eyebrow--light">{{ i18n.t('conference.hero.kicker') }}</span>
+      <h2 id="conf-team-title" class="conference-team__title">
+        <span>YOUR EVENT.</span>
+        <span>OUR PRODUCTION.</span>
+        <strong>ONE PROFESSIONAL TEAM.</strong>
+      </h2>
+      <p>{{ i18n.t('conference.team.desc') }}</p>
+    </div>
+    <ul class="conference-team__points">
+      @for (point of teamPoints(); track point; let i = $index) {
+        <li appReveal="up" [revealDelay]="i * 70">
+          <span class="conference-team__index">0{{ i + 1 }}</span>
+          <span>{{ point }}</span>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<section class="section section--paper conference-production" aria-labelledby="conf-production-title">
+  <div class="shell">
+    <div class="section-head" appReveal="up">
+      <div class="section-head__copy">
+        <span class="eyebrow">{{ i18n.t('conference.equipment.eyebrow') }}</span>
+        <h2 id="conf-production-title" class="h2">{{ i18n.t('conference.equipment.title') }}</h2>
+        <p class="lead">{{ i18n.t('conference.equipment.desc') }}</p>
+      </div>
+    </div>
+
+    <div class="split split--60-40 conference-production__split">
+      <div class="conference-equipment panel" appReveal="left">
+        <span class="eyebrow">{{ i18n.t('conference.equipment.eyebrow') }}</span>
+        <ul class="conference-list">
+          @for (item of equipment(); track item) {
+            <li><app-icon name="check" [size]="14" /> {{ item }}</li>
+          }
+        </ul>
+      </div>
+      <div class="conference-deliverables panel panel--blue" appReveal="right">
+        <span class="eyebrow eyebrow--light">Livrables</span>
+        <ul class="conference-list conference-list--light">
+          @for (item of deliverables(); track item) {
+            <li><app-icon name="arrow-right" [size]="14" /> {{ item }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft conference-clients" aria-labelledby="conf-clients-title">
+  <div class="shell split split--60-40">
+    <div appReveal="up">
+      <span class="eyebrow">{{ i18n.t('conference.clients.eyebrow') }}</span>
+      <h2 id="conf-clients-title" class="h2">{{ i18n.t('conference.clients.title') }}</h2>
+      <p class="lead">{{ i18n.t('conference.clients.desc') }}</p>
+    </div>
+    <div class="conference-clients__list" appReveal="right">
+      @for (client of content.settings().institutionalClients; track client; let i = $index) {
+        <span class="conference-clients__item">
+          <span class="num">0{{ i + 1 }}</span>
+          {{ client }}
+        </span>
+      }
+      <p class="conference-clients__note">
+        {{ i18n.loc('Références nominatives publiées uniquement après accord des clients.', 'Named references published only with client approval.') }}
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark on-dark conference-process" aria-labelledby="conf-process-title">
+  <div class="shell">
+    <div class="section-head" appReveal="up">
+      <div class="section-head__copy">
+        <span class="eyebrow eyebrow--light">{{ i18n.t('conference.process.eyebrow') }}</span>
+        <h2 id="conf-process-title" class="h2">{{ i18n.t('conference.process.title') }}</h2>
+      </div>
+    </div>
+    <div class="process">
+      <article class="process__step">
+        <span class="process__num">01</span>
+        <h3 class="process__title">{{ i18n.t('process.discovery') }}</h3>
+        <p class="process__desc">{{ i18n.t('process.discoveryDesc') }}</p>
+      </article>
+      <article class="process__step">
+        <span class="process__num">02</span>
+        <h3 class="process__title">{{ i18n.t('process.planning') }}</h3>
+        <p class="process__desc">{{ i18n.t('process.planningDesc') }}</p>
+      </article>
+      <article class="process__step">
+        <span class="process__num">03</span>
+        <h3 class="process__title">{{ i18n.t('process.production') }}</h3>
+        <p class="process__desc">{{ i18n.t('process.productionDesc') }}</p>
+      </article>
+      <article class="process__step">
+        <span class="process__num">04</span>
+        <h3 class="process__title">{{ i18n.t('process.delivery') }}</h3>
+        <p class="process__desc">{{ i18n.t('process.deliveryDesc') }}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper conference-gallery" aria-labelledby="conf-gallery-title">
+  <div class="shell">
+    <div class="section-head" appReveal="up">
+      <div class="section-head__copy">
+        <span class="eyebrow">{{ i18n.t('conference.gallery.eyebrow') }}</span>
+        <h2 id="conf-gallery-title" class="h2">{{ i18n.t('conference.gallery.title') }}</h2>
+      </div>
+      <button type="button" class="btn btn--ghost btn--sm" (click)="openLightbox(0)">
+        {{ i18n.t('cta.seeGallery') }}
+        <app-icon name="eye" [size]="15" />
+      </button>
+    </div>
+
+    <div class="conference-gallery__grid">
+      @for (image of gallery(); track image.name + $index; let i = $index) {
+        <button
+          type="button"
+          class="conference-gallery__item"
+          [class.conference-gallery__item--wide]="i === 0"
+          (click)="openLightbox(i)"
+          [attr.aria-label]="i18n.t('portfolio.open')"
+        >
+          <app-img [name]="image.name" [alt]="image.caption" sizes="(max-width: 800px) 100vw, 50vw" />
+          <span class="conference-gallery__zoom"><app-icon name="eye" [size]="16" /></span>
+        </button>
+      }
+    </div>
+    <p class="conference-gallery__note">{{ i18n.t('common.demoNote') }}</p>
+  </div>
+</section>
+
+<section class="conference-quote on-dark" aria-labelledby="conf-quote-title">
+  <div class="shell conference-quote__inner">
+    <div appReveal="left">
+      <span class="eyebrow eyebrow--light">{{ i18n.t('conference.form.eyebrow') }}</span>
+      <h2 id="conf-quote-title" class="h2">{{ i18n.t('conference.form.title') }}</h2>
+      <p class="lead">{{ i18n.t('conference.form.desc') }}</p>
+      <div class="conference-quote__actions">
+        <a
+          [routerLink]="i18n.path('/devis')"
+          [queryParams]="{ service: 'couverture-conferences' }"
+          class="btn btn--lg"
+        >
+          {{ i18n.t('cta.requestProposal') }}
+          <app-icon name="arrow-right" [size]="17" />
+        </a>
+        <a [routerLink]="i18n.path('/contact')" class="btn btn--ghost btn--lg">
+          {{ i18n.t('cta.contact') }}
+        </a>
+      </div>
+    </div>
+    <div class="conference-quote__card" appReveal="right">
+      <span class="conference-quote__label">{{ i18n.t('quote.form.service') }}</span>
+      <p class="conference-quote__service">{{ i18n.t('serviceOption.conference') }}</p>
+      <span class="conference-quote__label">{{ i18n.t('quote.form.serviceHelp') }}</span>
+      <ul class="conference-quote__checks">
+        <li><app-icon name="check" [size]="14" /> {{ i18n.t('cta.bookConferenceCoverage') }}</li>
+        <li><app-icon name="check" [size]="14" /> {{ i18n.t('quote.success.desc') }}</li>
+        <li><app-icon name="check" [size]="14" /> {{ i18n.t('contact.responseValue') }}</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper conference-faq">
+  <div class="shell split split--40-60">
+    <div>
+      <span class="eyebrow">FAQ</span>
+      <h2 class="h2">{{ i18n.loc('Questions fréquentes', 'Frequently asked questions') }}</h2>
+      <p class="lead">
+        {{ i18n.loc('Les réponses aux questions les plus fréquentes sur la couverture de conférences.', 'Answers to the most common questions about conference coverage.') }}
+      </p>
+    </div>
+    <div class="accordion">
+      @for (item of content.faq(); track item.qFr; let i = $index) {
+        <div class="accordion__item" [class.is-open]="openFaq() === i">
+          <button type="button" class="accordion__trigger" (click)="toggleFaq(i)" [attr.aria-expanded]="openFaq() === i">
+            <span>{{ i18n.loc(item.qFr, item.qEn) }}</span>
+            <span class="accordion__icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion__panel" [style.max-height]="openFaq() === i ? '420px' : '0'">
+            <div class="accordion__inner">{{ i18n.loc(item.aFr, item.aEn) }}</div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<app-lightbox
+  [images]="gallery()"
+  [open]="lightboxOpen()"
+  [start]="lightboxIndex()"
+  (closed)="lightboxOpen.set(false)"
+/>

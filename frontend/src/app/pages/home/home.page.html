@@ -1,0 +1,471 @@
+<section class="home-hero on-dark noise" aria-labelledby="home-hero-title">
+  <div class="home-hero__media">
+    <app-img name="hero-conference" alt="" sizes="100vw" [priority]="true" [width]="2400" [height]="1500" />
+  </div>
+  <div class="home-hero__scrim" aria-hidden="true"></div>
+  <div class="blueprint" aria-hidden="true"></div>
+
+  <div class="shell home-hero__inner">
+    <div class="home-hero__copy stagger">
+      <span class="eyebrow eyebrow--light">{{ i18n.t('home.hero.kicker') }}</span>
+      <h1 id="home-hero-title" class="home-hero__title">
+        <span>WE CREATE.</span>
+        <span>WE CAPTURE.</span>
+        <span class="home-hero__title-accent">WE INSPIRE.</span>
+      </h1>
+      <p class="lead home-hero__lead">{{ i18n.t('home.hero.desc') }}</p>
+      <div class="home-hero__actions">
+        <a [routerLink]="i18n.path('/devis')" class="btn btn--lg btn--cut">
+          {{ i18n.t('cta.quote') }}
+          <app-icon name="arrow-right" [size]="17" />
+        </a>
+        <button type="button" class="home-hero__play" (click)="playShowreel()">
+          <span class="play-btn"><app-icon name="play" [size]="22" /></span>
+          <span>
+            <strong>{{ i18n.t('cta.showreel') }}</strong>
+            <small>{{ content.settings().showreel.caption }}</small>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <aside class="home-hero__rail" aria-hidden="true">
+      <span class="home-hero__rail-monogram">SLA</span>
+      <span class="home-hero__rail-text">{{ i18n.t('home.hero.rail') }}</span>
+      <span class="home-hero__rail-line"></span>
+      <span class="home-hero__rail-index">01 / 05</span>
+    </aside>
+  </div>
+
+  <div class="shell home-hero__foot">
+    <a href="#home-about" class="scroll-cue">
+      <span class="scroll-cue__line"></span>
+      <span>{{ i18n.t('home.hero.scroll') }}</span>
+      <app-icon name="arrow-down" [size]="14" />
+    </a>
+    <div class="home-hero__signature">
+      <span>{{ content.settings().monogram }}</span>
+      <span>{{ content.settings().tagline }}</span>
+    </div>
+  </div>
+</section>
+
+<div class="expertise-bar on-dark" aria-hidden="true">
+  <div class="marquee">
+    <div class="marquee__track">
+      @for (service of content.services(); track service.slug) {
+        <span class="marquee__item">{{ i18n.loc(service.title, service.titleEn) }}</span>
+      }
+      <span class="marquee__item">{{ content.settings().tagline }}</span>
+    </div>
+    <div class="marquee__track">
+      @for (service of content.services(); track service.slug) {
+        <span class="marquee__item">{{ i18n.loc(service.title, service.titleEn) }}</span>
+      }
+      <span class="marquee__item">{{ content.settings().tagline }}</span>
+    </div>
+  </div>
+</div>
+
+<section id="home-about" class="section section--paper home-about" aria-labelledby="home-about-title">
+  <div class="shell split split--60-40">
+    <div class="home-about__copy" appReveal="up">
+      <span class="eyebrow">{{ i18n.t('home.about.eyebrow') }}</span>
+      <h2 id="home-about-title" class="h2">{{ i18n.t('home.about.title') }}</h2>
+      <p class="lead">{{ i18n.t('home.about.p1') }}</p>
+      <p class="home-about__body">{{ i18n.t('home.about.p2') }} {{ i18n.t('home.about.p3') }}</p>
+
+      <ul class="home-about__commitments">
+        <li>
+          <span class="home-about__num">01</span>
+          <div>
+            <strong>{{ i18n.t('home.about.commit1') }}</strong>
+            <span>{{ i18n.t('home.about.commit1d') }}</span>
+          </div>
+        </li>
+        <li>
+          <span class="home-about__num">02</span>
+          <div>
+            <strong>{{ i18n.t('home.about.commit2') }}</strong>
+            <span>{{ i18n.t('home.about.commit2d') }}</span>
+          </div>
+        </li>
+        <li>
+          <span class="home-about__num">03</span>
+          <div>
+            <strong>{{ i18n.t('home.about.commit3') }}</strong>
+            <span>{{ i18n.t('home.about.commit3d') }}</span>
+          </div>
+        </li>
+      </ul>
+
+      <a [routerLink]="i18n.path('/a-propos')" class="link-arrow">
+        {{ i18n.t('cta.learnMore') }}
+        <app-icon name="arrow-right" [size]="15" />
+      </a>
+    </div>
+
+    <div class="home-about__media bracket-frame" appReveal="right">
+      <app-img name="team-collab" alt="Équipe SELECTA EMPIRE en production" sizes="(max-width: 1024px) 100vw, 40vw" />
+      <div class="home-about__caption">
+        <span class="home-about__caption-label">{{ i18n.t('home.about.since') }}</span>
+        <span class="home-about__caption-tag">{{ content.settings().tagline }}</span>
+      </div>
+      <div class="home-about__vision">
+        <span class="eyebrow eyebrow--light eyebrow--plain">{{ i18n.t('home.about.vision') }}</span>
+        <p>{{ i18n.t('home.about.visionText') }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="home-stats" aria-labelledby="home-stats-title">
+  <div class="shell">
+    <div class="home-stats__head" appReveal="up">
+      <div>
+        <span class="eyebrow eyebrow--light">{{ i18n.t('home.stats.eyebrow') }}</span>
+        <h2 id="home-stats-title" class="h2">{{ i18n.t('home.about.vision') }} — {{ i18n.t('home.about.mission') }}</h2>
+      </div>
+      <p class="home-stats__desc">{{ i18n.t('home.stats.desc') }}</p>
+    </div>
+
+    <div class="home-stats__grid">
+      @for (stat of content.settings().stats; track stat.key; let i = $index) {
+        <article class="home-stat" appReveal="up" [revealDelay]="i * 90">
+          <div class="home-stat__value">
+            @if (stat.value !== null) {
+              <app-counter [value]="stat.value" [suffix]="stat.suffix" />
+            } @else {
+              <span class="home-stat__index">{{ (i + 1).toString().padStart(2, '0') }}</span>
+            }
+          </div>
+          <h3 class="home-stat__label">{{ i18n.loc(stat.labelFr, stat.labelEn) }}</h3>
+          <p class="home-stat__note">{{ i18n.loc(stat.noteFr, stat.noteEn) }}</p>
+        </article>
+      }
+    </div>
+
+    <p class="home-stats__pending">
+      <app-icon name="spark" [size]="15" />
+      {{ i18n.t('home.stats.pending') }}
+    </p>
+  </div>
+</section>
+
+<section class="section section--soft home-services" aria-labelledby="home-services-title">
+  <div class="shell">
+    <div class="section-head" appReveal="up">
+      <div class="section-head__copy">
+        <span class="eyebrow">{{ i18n.t('home.services.eyebrow') }}</span>
+        <h2 id="home-services-title" class="h2">{{ i18n.t('home.services.title') }}</h2>
+        <p class="lead">{{ i18n.t('home.services.desc') }}</p>
+      </div>
+      <a [routerLink]="i18n.path('/services')" class="link-arrow">
+        {{ i18n.t('cta.exploreServices') }}
+        <app-icon name="arrow-right" [size]="15" />
+      </a>
+    </div>
+
+    <div class="expertise-grid">
+      @for (service of content.services(); track service.slug; let i = $index) {
+        <a
+          class="service-card"
+          [routerLink]="[i18n.path('/services'), service.slug]"
+          appReveal="up"
+          [revealDelay]="i * 60"
+        >
+          <div class="service-card__media">
+            <app-img
+              [name]="service.image"
+              [alt]="i18n.loc(service.title, service.titleEn)"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__index">0{{ i + 1 }} — {{ i18n.loc(service.tags.join(' · '), service.tagsEn.join(' · ')) }}</span>
+            <h3>{{ i18n.loc(service.title, service.titleEn) }}</h3>
+            <p>{{ i18n.loc(service.excerpt, service.excerptEn) }}</p>
+            <span class="service-card__link">
+              {{ i18n.t('cta.discoverServices') }}
+              <span class="arrow-circle"><app-icon name="arrow-up-right" [size]="15" /></span>
+            </span>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark on-dark home-conference" aria-labelledby="home-conf-title">
+  <div class="blueprint" aria-hidden="true"></div>
+  <div class="shell split split--40-60 home-conference__split">
+    <div class="home-conference__media bracket-frame" appReveal="left">
+      <app-img
+        name="conference-stage"
+        [alt]="i18n.t('conference.hero.title')"
+        sizes="(max-width: 1024px) 100vw, 42vw"
+      />
+      <div class="home-conference__badge">
+        <app-icon name="conference" [size]="20" />
+        <span>{{ i18n.t('home.conf.eyebrow') }}</span>
+      </div>
+      <div class="home-conference__stamp">
+        <span>YOUR EVENT.</span>
+        <span>OUR PRODUCTION.</span>
+        <strong>ONE PROFESSIONAL TEAM.</strong>
+      </div>
+    </div>
+
+    <div class="home-conference__copy" appReveal="right">
+      <span class="eyebrow eyebrow--light">{{ i18n.t('home.conf.eyebrow') }}</span>
+      <h2 id="home-conf-title" class="h2 home-conference__title">
+        Every speech deserves<br />
+        to be remembered.
+      </h2>
+      <p class="home-conference__subtitle">{{ i18n.t('home.conf.subtitle') }}</p>
+      <p class="lead">{{ i18n.t('home.conf.desc') }}</p>
+
+      <ul class="home-conference__list">
+        @for (item of included(); track item) {
+          <li>
+            <app-icon name="check" [size]="15" />
+            {{ item }}
+          </li>
+        }
+      </ul>
+
+      <div class="home-conference__actions">
+        <a [routerLink]="i18n.path('/couverture-conferences')" class="btn">
+          {{ i18n.t('cta.learnMore') }}
+          <app-icon name="arrow-right" [size]="16" />
+        </a>
+        <a [routerLink]="i18n.path('/devis')" [queryParams]="{ service: 'couverture-conferences' }" class="btn btn--ghost">
+          {{ i18n.t('cta.bookConferenceCoverage') }}
+        </a>
+      </div>
+      <p class="home-conference__note">{{ i18n.t('home.conf.ctaNote') }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper home-projects" aria-labelledby="home-projects-title">
+  <div class="shell">
+    <div class="section-head" appReveal="up">
+      <div class="section-head__copy">
+        <span class="eyebrow">{{ i18n.t('home.projects.eyebrow') }}</span>
+        <h2 id="home-projects-title" class="h2">{{ i18n.t('home.projects.title') }}</h2>
+        <p class="lead">{{ i18n.t('home.projects.desc') }}</p>
+      </div>
+      <a [routerLink]="i18n.path('/realisations')" class="link-arrow">
+        {{ i18n.t('cta.seeAllProjects') }}
+        <app-icon name="arrow-right" [size]="15" />
+      </a>
+    </div>
+
+    <div class="home-projects__bar" appReveal="fade">
+      <div class="filters" role="group" aria-label="Filtrer les réalisations">
+        @for (category of categories(); track category.key) {
+          <button
+            type="button"
+            class="filter"
+            [class.is-active]="filter() === category.key"
+            (click)="setFilter(category.key)"
+          >
+            {{ category.label }}
+          </button>
+        }
+      </div>
+      <span class="home-projects__count num">{{ filteredProjects().length }} / {{ content.featuredProjects().length }}</span>
+    </div>
+
+    <div class="projects-grid projects-grid--masonry">
+      @for (project of filteredProjects(); track project.slug; let i = $index) {
+        <a
+          class="project-card"
+          [routerLink]="[i18n.path('/realisations'), project.slug]"
+          appReveal="up"
+          [revealDelay]="i * 70"
+        >
+          <div class="project-card__media">
+            <app-img
+              [name]="project.cover"
+              [alt]="i18n.loc(project.title, project.titleEn)"
+              sizes="(max-width: 780px) 100vw, 50vw"
+            />
+            @if (project.isDemo) {
+              <span class="badge badge--demo project-card__badge">{{ i18n.t('common.demo') }}</span>
+            }
+            <span class="project-card__arrow"><app-icon name="arrow-up-right" [size]="16" /></span>
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__head">
+              <h3 class="project-card__title">{{ i18n.loc(project.title, project.titleEn) }}</h3>
+              <span class="num project-card__year">{{ project.year }}</span>
+            </div>
+            <div class="project-card__meta">
+              <span>{{ i18n.loc(project.categoryLabel, project.categoryLabelEn) }}</span>
+              <span>{{ project.location }}</span>
+            </div>
+            <p class="project-card__excerpt">{{ i18n.loc(project.excerpt, project.excerptEn) }}</p>
+          </div>
+        </a>
+      }
+    </div>
+
+    <p class="home-projects__note">
+      <app-icon name="shield" [size]="14" />
+      {{ i18n.t('home.projects.demoNote') }}
+    </p>
+  </div>
+</section>
+
+<section class="home-showreel on-dark noise" aria-labelledby="home-showreel-title">
+  <div class="home-showreel__media">
+    <app-img name="cinema-camera" alt="" sizes="100vw" />
+  </div>
+  <div class="home-showreel__scrim" aria-hidden="true"></div>
+  <div class="shell home-showreel__inner">
+    <div class="home-showreel__copy" appReveal="left">
+      <span class="eyebrow eyebrow--light">{{ i18n.t('home.showreel.eyebrow') }}</span>
+      <h2 id="home-showreel-title" class="h2">More than images.<br />We create experiences.</h2>
+      <p class="lead">{{ i18n.t('home.showreel.desc') }}</p>
+      <button type="button" class="btn btn--ghost" (click)="playShowreel()">
+        {{ i18n.t('home.showreel.play') }}
+        <app-icon name="play" [size]="15" />
+      </button>
+    </div>
+
+    <button type="button" class="home-showreel__stage" (click)="playShowreel()" [attr.aria-label]="i18n.t('home.showreel.play')">
+      <span class="home-showreel__frame bracket-frame">
+        <app-img name="conference-hall" alt="" sizes="(max-width: 900px) 90vw, 55vw" />
+        <span class="home-showreel__overlay">
+          <span class="play-btn"><app-icon name="play" [size]="24" /></span>
+          <span class="home-showreel__placeholder">{{ i18n.t('home.showreel.placeholder') }}</span>
+          <span class="home-showreel__placeholder-desc">{{ i18n.t('home.showreel.placeholderDesc') }}</span>
+        </span>
+      </span>
+    </button>
+  </div>
+</section>
+
+<section class="section section--dark on-dark home-process" aria-labelledby="home-process-title">
+  <div class="shell">
+    <div class="section-head" appReveal="up">
+      <div class="section-head__copy">
+        <span class="eyebrow eyebrow--light">{{ i18n.t('home.process.eyebrow') }}</span>
+        <h2 id="home-process-title" class="h2">{{ i18n.t('home.process.title') }}</h2>
+        <p class="lead">{{ i18n.t('home.process.desc') }}</p>
+      </div>
+    </div>
+
+    <div class="process">
+      <article class="process__step" appReveal="up">
+        <span class="process__num">01</span>
+        <h3 class="process__title">{{ i18n.t('process.discovery') }}</h3>
+        <p class="process__desc">{{ i18n.t('process.discoveryDesc') }}</p>
+      </article>
+      <article class="process__step" appReveal="up" [revealDelay]="100">
+        <span class="process__num">02</span>
+        <h3 class="process__title">{{ i18n.t('process.planning') }}</h3>
+        <p class="process__desc">{{ i18n.t('process.planningDesc') }}</p>
+      </article>
+      <article class="process__step" appReveal="up" [revealDelay]="200">
+        <span class="process__num">03</span>
+        <h3 class="process__title">{{ i18n.t('process.production') }}</h3>
+        <p class="process__desc">{{ i18n.t('process.productionDesc') }}</p>
+      </article>
+      <article class="process__step" appReveal="up" [revealDelay]="300">
+        <span class="process__num">04</span>
+        <h3 class="process__title">{{ i18n.t('process.delivery') }}</h3>
+        <p class="process__desc">{{ i18n.t('process.deliveryDesc') }}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft home-trust" aria-labelledby="home-trust-title">
+  <div class="shell">
+    @if (content.testimonials().length) {
+      <div class="section-head" appReveal="up">
+        <div class="section-head__copy">
+          <span class="eyebrow">{{ i18n.t('home.partners.eyebrow') }}</span>
+          <h2 id="home-trust-title" class="h2">{{ i18n.t('home.partners.title') }}</h2>
+        </div>
+      </div>
+      <div class="grid-3">
+        @for (testimonial of content.testimonials(); track testimonial.id) {
+          <figure class="testimonial" appReveal="up">
+            <blockquote class="testimonial__quote">{{ testimonial.quote }}</blockquote>
+            <figcaption class="testimonial__person">
+              <span class="testimonial__avatar">{{ testimonial.name.charAt(0) }}</span>
+              <span>
+                <span class="testimonial__name">{{ testimonial.name }}</span>
+                <span class="testimonial__role">{{ testimonial.role }} — {{ testimonial.organization }}</span>
+              </span>
+            </figcaption>
+          </figure>
+        }
+      </div>
+    } @else {
+      <div class="section-head" appReveal="up">
+        <div class="section-head__copy">
+          <span class="eyebrow">{{ i18n.t('home.quality.eyebrow') }}</span>
+          <h2 id="home-trust-title" class="h2">{{ i18n.t('home.quality.title') }}</h2>
+          <p class="lead">{{ i18n.t('home.quality.desc') }}</p>
+        </div>
+        <span class="home-trust__mark" aria-hidden="true">
+          <app-icon name="quote" [size]="42" />
+        </span>
+      </div>
+
+      <div class="home-trust__grid">
+        @for (item of commitments(); track item.title; let i = $index) {
+          <article class="home-trust__item" appReveal="up" [revealDelay]="i * 80">
+            <span class="home-trust__num">0{{ i + 1 }}</span>
+            <div>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.text }}</p>
+            </div>
+          </article>
+        }
+      </div>
+    }
+  </div>
+</section>
+
+@if (content.partners().length) {
+  <section class="section section--paper home-partners" aria-labelledby="home-partners-title">
+    <div class="shell">
+      <div class="section-head section-head--center" appReveal="up">
+        <div class="section-head__copy">
+          <span class="eyebrow">{{ i18n.t('home.partners.eyebrow') }}</span>
+          <h2 id="home-partners-title" class="h2">{{ i18n.t('home.partners.title') }}</h2>
+          <p class="lead">{{ i18n.t('home.partners.note') }}</p>
+        </div>
+      </div>
+      <div class="home-partners__grid">
+        @for (partner of content.partners(); track partner.id) {
+          <a
+            class="home-partners__item"
+            [href]="partner.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            [attr.aria-label]="partner.name"
+          >
+            <img [src]="partner.logo" [alt]="partner.name" loading="lazy" />
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+}
+
+<app-quote-cta />
+
+<app-video-modal
+  [open]="videoOpen()"
+  [videoUrl]="content.settings().showreel.url"
+  [poster]="content.settings().showreel.poster"
+  [caption]="content.settings().showreel.caption"
+  (closed)="videoOpen.set(false)"
+/>

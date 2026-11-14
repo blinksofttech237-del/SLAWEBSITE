@@ -1,0 +1,131 @@
+<app-page-hero
+  [kicker]="i18n.t('about.hero.kicker')"
+  [title]="i18n.t('about.hero.title')"
+  [lead]="i18n.t('about.hero.lead')"
+  image="team-collab"
+/>
+
+<section class="section section--paper about-story">
+  <div class="shell split split--60-40">
+    <div class="about-story__copy" appReveal="up">
+      <span class="eyebrow">{{ i18n.t('about.story.eyebrow') }}</span>
+      <h2 class="h2">{{ i18n.t('about.story.title') }}</h2>
+      <p class="lead">{{ i18n.t('about.story.p1') }}</p>
+      <p class="about-story__body">{{ i18n.t('about.story.p2') }}</p>
+      <p class="about-story__body">{{ i18n.t('about.story.p3') }}</p>
+
+      <div class="about-story__quote">
+        <app-icon name="quote" [size]="26" />
+        <p>WE CREATE. WE CAPTURE. WE INSPIRE.</p>
+      </div>
+    </div>
+
+    <div class="about-story__media bracket-frame" appReveal="right">
+      <app-img name="office-meeting" [alt]="i18n.t('about.hero.title')" sizes="(max-width: 1024px) 100vw, 40vw" />
+      <div class="about-story__caption">
+        <span>{{ content.settings().monogram }}</span>
+        <span>{{ i18n.t('home.about.since') }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft about-values">
+  <div class="shell">
+    <div class="section-head section-head--center" appReveal="up">
+      <div class="section-head__copy">
+        <span class="eyebrow">{{ i18n.t('about.values.eyebrow') }}</span>
+        <h2 class="h2">{{ i18n.t('about.values.title') }}</h2>
+      </div>
+    </div>
+
+    <div class="about-values__grid">
+      @for (value of values(); track value.title; let i = $index) {
+        <article class="about-value" appReveal="up" [revealDelay]="i * 80">
+          <span class="icon-tile"><app-icon [name]="value.icon" [size]="22" /></span>
+          <span class="about-value__num">0{{ i + 1 }}</span>
+          <h3>{{ value.title }}</h3>
+          <p>{{ value.text }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark on-dark about-poles">
+  <div class="blueprint" aria-hidden="true"></div>
+  <div class="shell">
+    <div class="section-head" appReveal="up">
+      <div class="section-head__copy">
+        <span class="eyebrow eyebrow--light">{{ i18n.t('about.poles.eyebrow') }}</span>
+        <h2 class="h2">{{ i18n.t('about.poles.title') }}</h2>
+        <p class="lead">{{ i18n.t('about.poles.desc') }}</p>
+      </div>
+    </div>
+
+    <div class="about-poles__grid">
+      @for (pole of content.teamPoles(); track pole.name; let i = $index) {
+        <article class="about-pole" appReveal="up" [revealDelay]="i * 80">
+          <span class="about-pole__num">0{{ i + 1 }}</span>
+          <span class="icon-tile icon-tile--dark"><app-icon [name]="pole.icon" [size]="22" /></span>
+          <h3>{{ pole.name }}</h3>
+          <p>{{ pole.role }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper about-difference">
+  <div class="shell split split--40-60">
+    <div class="about-difference__media bracket-frame" appReveal="left">
+      <app-img name="film-set" [alt]="i18n.t('about.difference.title')" sizes="(max-width: 1024px) 100vw, 40vw" />
+    </div>
+    <div class="about-difference__copy" appReveal="right">
+      <span class="eyebrow">{{ i18n.t('about.difference.eyebrow') }}</span>
+      <h2 class="h2">{{ i18n.t('about.difference.title') }}</h2>
+      <p class="lead">{{ i18n.t('about.difference.desc') }}</p>
+
+      <ul class="about-difference__list">
+        @for (item of differentiators(); track item) {
+          <li>
+            <app-icon name="check" [size]="16" />
+            <span>{{ item }}</span>
+          </li>
+        }
+      </ul>
+
+      <p class="about-difference__note">
+        <app-icon name="shield" [size]="14" />
+        {{ i18n.t('about.seoNote') }}
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft about-faq">
+  <div class="shell split split--40-60">
+    <div>
+      <span class="eyebrow">FAQ</span>
+      <h2 class="h2">{{ i18n.loc('Questions fréquentes', 'Frequently asked questions') }}</h2>
+      <p class="lead">
+        {{ i18n.loc('Les réponses aux questions que l’on nous pose le plus souvent avant une collaboration.', 'Answers to the questions we are most often asked before working together.') }}
+      </p>
+    </div>
+    <div class="accordion">
+      @for (item of content.faq(); track item.qFr; let i = $index) {
+        <div class="accordion__item" [class.is-open]="openFaq() === i">
+          <button type="button" class="accordion__trigger" (click)="toggleFaq(i)" [attr.aria-expanded]="openFaq() === i">
+            <span>{{ i18n.loc(item.qFr, item.qEn) }}</span>
+            <span class="accordion__icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion__panel" [style.max-height]="openFaq() === i ? '420px' : '0'">
+            <div class="accordion__inner">{{ i18n.loc(item.aFr, item.aEn) }}</div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<app-quote-cta />

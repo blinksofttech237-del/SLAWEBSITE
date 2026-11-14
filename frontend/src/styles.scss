@@ -1,0 +1,40 @@
+/* ============================================================
+   SELECTA EMPIRE LIMITED — global stylesheet
+   WE CREATE. WE CAPTURE. WE INSPIRE.
+   ============================================================ */
+
+@use 'styles/fonts';
+@use 'styles/tokens';
+@use 'styles/base';
+@use 'styles/layout';
+@use 'styles/components';
+@use 'styles/sections';
+@use 'styles/animations';
+@use 'styles/admin';
+
+/* Print — clean documents for quotes and legal pages */
+@media print {
+  .site-header,
+  .site-topbar,
+  .site-footer,
+  .cookie-bar,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .page-hero {
+    min-height: 0;
+    padding: 0 0 2rem;
+    background: none;
+    color: #000;
+  }
+
+  .page-hero__media {
+    display: none;
+  }
+}

@@ -1,0 +1,134 @@
+<app-page-hero
+  [kicker]="i18n.t('services.hero.kicker')"
+  [title]="i18n.t('services.hero.title')"
+  [lead]="i18n.t('services.hero.lead')"
+  image="cinema-camera"
+  [ctaLabel]="i18n.t('cta.requestProposal')"
+  ctaPath="/devis"
+/>
+
+<section class="section section--paper services-intro">
+  <div class="shell split split--60-40">
+    <div appReveal="up">
+      <span class="eyebrow">{{ i18n.t('services.intro.eyebrow') }}</span>
+      <h2 class="h2">{{ i18n.t('services.intro.title') }}</h2>
+    </div>
+    <div class="services-intro__side" appReveal="right">
+      <p class="lead">{{ i18n.t('services.intro.desc') }}</p>
+      <div class="services-intro__chips">
+        @for (service of services(); track service.slug) {
+          <a [routerLink]="[i18n.path('/services'), service.slug]" class="chip">
+            {{ i18n.loc(service.title, service.titleEn) }}
+          </a>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft services-list">
+  <div class="shell">
+    @for (service of services(); track service.slug; let i = $index) {
+      <article class="services-row" [class.services-row--reverse]="i % 2 === 1" appReveal="up">
+        <a class="services-row__media" [routerLink]="[i18n.path('/services'), service.slug]">
+          <app-img
+            [name]="service.image"
+            [alt]="i18n.loc(service.title, service.titleEn)"
+            sizes="(max-width: 900px) 100vw, 50vw"
+          />
+          <span class="services-row__index">0{{ i + 1 }}</span>
+          <span class="services-row__arrow"><app-icon name="arrow-up-right" [size]="17" /></span>
+        </a>
+
+        <div class="services-row__copy">
+          <span class="services-row__kicker">{{ i18n.loc(service.tags.join(' · '), service.tagsEn.join(' · ')) }}</span>
+          <h2 class="h2">{{ i18n.loc(service.title, service.titleEn) }}</h2>
+          <p class="lead">{{ i18n.loc(service.excerpt, service.excerptEn) }}</p>
+
+          @if (detail(service.slug); as detail) {
+            <ul class="services-row__caps">
+              @for (capability of (i18n.isFrench() ? detail.capabilitiesFr : detail.capabilitiesEn).slice(0, 4); track capability) {
+                <li><app-icon name="check" [size]="13" /> {{ capability }}</li>
+              }
+            </ul>
+          }
+
+          <div class="services-row__actions">
+            <a [routerLink]="[i18n.path('/services'), service.slug]" class="btn btn--sm">
+              {{ i18n.t('cta.viewDetails') }}
+              <app-icon name="arrow-right" [size]="15" />
+            </a>
+            <a
+              [routerLink]="i18n.path('/devis')"
+              [queryParams]="{ service: service.slug }"
+              class="link-arrow"
+            >
+              {{ i18n.t('cta.quote') }}
+            </a>
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="section section--dark on-dark services-approach">
+  <div class="shell">
+    <div class="section-head" appReveal="up">
+      <div class="section-head__copy">
+        <span class="eyebrow eyebrow--light">{{ i18n.t('home.process.eyebrow') }}</span>
+        <h2 class="h2">{{ i18n.t('home.process.title') }}</h2>
+        <p class="lead">{{ i18n.t('home.process.desc') }}</p>
+      </div>
+    </div>
+    <div class="process">
+      <article class="process__step">
+        <span class="process__num">01</span>
+        <h3 class="process__title">{{ i18n.t('process.discovery') }}</h3>
+        <p class="process__desc">{{ i18n.t('process.discoveryDesc') }}</p>
+      </article>
+      <article class="process__step">
+        <span class="process__num">02</span>
+        <h3 class="process__title">{{ i18n.t('process.planning') }}</h3>
+        <p class="process__desc">{{ i18n.t('process.planningDesc') }}</p>
+      </article>
+      <article class="process__step">
+        <span class="process__num">03</span>
+        <h3 class="process__title">{{ i18n.t('process.production') }}</h3>
+        <p class="process__desc">{{ i18n.t('process.productionDesc') }}</p>
+      </article>
+      <article class="process__step">
+        <span class="process__num">04</span>
+        <h3 class="process__title">{{ i18n.t('process.delivery') }}</h3>
+        <p class="process__desc">{{ i18n.t('process.deliveryDesc') }}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper services-faq">
+  <div class="shell split split--40-60">
+    <div>
+      <span class="eyebrow">FAQ</span>
+      <h2 class="h2">{{ i18n.loc('Questions fréquentes', 'Frequently asked questions') }}</h2>
+      <p class="lead">
+        {{ i18n.loc('Une interrogation sur nos prestations ? La réponse est peut-être ici.', 'A question about our services? The answer may be here.') }}
+      </p>
+    </div>
+    <div class="accordion">
+      @for (item of content.faq(); track item.qFr; let i = $index) {
+        <div class="accordion__item" [class.is-open]="openFaq() === i">
+          <button type="button" class="accordion__trigger" (click)="toggleFaq(i)" [attr.aria-expanded]="openFaq() === i">
+            <span>{{ i18n.loc(item.qFr, item.qEn) }}</span>
+            <span class="accordion__icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion__panel" [style.max-height]="openFaq() === i ? '420px' : '0'">
+            <div class="accordion__inner">{{ i18n.loc(item.aFr, item.aEn) }}</div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<app-quote-cta />

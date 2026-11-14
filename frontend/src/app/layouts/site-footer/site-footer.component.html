@@ -1,0 +1,110 @@
+<footer class="site-footer on-dark">
+  <div class="site-footer__glow" aria-hidden="true"></div>
+  <div class="shell site-footer__main">
+    <div class="site-footer__grid">
+      <div class="footer-brand">
+        <a [routerLink]="i18n.path('/')" aria-label="SELECTA EMPIRE LIMITED">
+          <app-logo variant="light" [size]="52" />
+        </a>
+        <p class="footer-brand__about">{{ i18n.t('footer.about') }}</p>
+        <p class="footer-brand__tagline">WE CREATE. WE CAPTURE. WE INSPIRE.</p>
+        <div class="footer-brand__socials">
+          @for (social of content.settings().socials; track social.network) {
+            <a
+              [href]="social.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              [attr.aria-label]="social.network"
+            >
+              <app-icon [name]="social.icon" [size]="16" />
+            </a>
+          }
+        </div>
+      </div>
+
+      <nav class="footer-col" [attr.aria-label]="i18n.t('common.quickLinks')">
+        <h2 class="footer-col__title">{{ i18n.t('common.quickLinks') }}</h2>
+        <ul class="footer-col__list">
+          @for (item of navItems; track item.path) {
+            <li>
+              <a [routerLink]="i18n.path(item.path)">{{ i18n.t(item.label) }}</a>
+            </li>
+          }
+          <li><a [routerLink]="i18n.path('/devis')">{{ i18n.t('cta.quote') }}</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" [attr.aria-label]="i18n.t('common.ourServices')">
+        <h2 class="footer-col__title">{{ i18n.t('common.ourServices') }}</h2>
+        <ul class="footer-col__list">
+          @for (service of content.services(); track service.slug) {
+            <li>
+              <a [routerLink]="[i18n.path('/services'), service.slug]">
+                {{ i18n.loc(service.title, service.titleEn) }}
+              </a>
+            </li>
+          }
+          <li>
+            <a [routerLink]="i18n.path('/services')">{{ i18n.t('cta.seeAll') }}</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="footer-col footer-col--contact">
+        <h2 class="footer-col__title">{{ i18n.t('common.contact') }}</h2>
+        <ul class="footer-contact">
+          <li>
+            <app-icon name="pin" [size]="15" />
+            <span>{{ content.settings().address }}, {{ content.settings().city }}</span>
+          </li>
+          <li>
+            <app-icon name="phone" [size]="15" />
+            <a [href]="'tel:' + content.settings().phoneHref">{{ content.settings().phone }}</a>
+          </li>
+          <li>
+            <app-icon name="mail" [size]="15" />
+            <a [href]="'mailto:' + content.settings().email">{{ content.settings().email }}</a>
+          </li>
+          <li>
+            <app-icon name="clock" [size]="15" />
+            <span>{{ content.settings().hours }}</span>
+          </li>
+        </ul>
+        @if (content.settings().contactPending) {
+          <p class="footer-contact__note">{{ i18n.t('contact.info.pending') }}</p>
+        }
+        <a [routerLink]="i18n.path('/contact')" class="footer-contact__cta">
+          {{ i18n.t('footer.contactCta') }}
+          <app-icon name="arrow-up-right" [size]="14" />
+        </a>
+      </div>
+
+      <div class="footer-col footer-col--newsletter">
+        <h2 class="footer-col__title">{{ i18n.t('common.newsletter') }}</h2>
+        <p class="footer-newsletter__title">{{ i18n.t('footer.newsletterTitle') }}</p>
+        <p class="footer-newsletter__desc">{{ i18n.t('footer.newsletterDesc') }}</p>
+        <app-newsletter />
+        <p class="footer-newsletter__lang">{{ i18n.t('footer.langNote') }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="shell site-footer__bottom">
+    <div class="site-footer__legal">
+      <span>© {{ year }} {{ content.settings().companyName }}. {{ i18n.t('footer.rights') }}</span>
+      <nav [attr.aria-label]="i18n.t('legal.hero.title')">
+        <a [routerLink]="i18n.path('/mentions-legales')">{{ i18n.t('footer.legal') }}</a>
+        <a [routerLink]="i18n.path('/confidentialite')">{{ i18n.t('footer.privacy') }}</a>
+        <a [routerLink]="i18n.path('/conditions-generales')">{{ i18n.t('footer.terms') }}</a>
+        <button type="button" (click)="cookies.openPreferences()">{{ i18n.t('footer.cookies') }}</button>
+      </nav>
+    </div>
+    <div class="site-footer__meta">
+      <span>{{ i18n.t('footer.credit') }}</span>
+      <button type="button" class="site-footer__top" (click)="scrollTop()">
+        {{ i18n.t('nav.top') }}
+        <app-icon name="arrow-down" [size]="14" />
+      </button>
+    </div>
+  </div>
+</footer>

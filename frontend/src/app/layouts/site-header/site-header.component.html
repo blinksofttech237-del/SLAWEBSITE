@@ -1,0 +1,169 @@
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+<div class="topbar">
+  <div class="shell topbar__inner">
+    <div class="topbar__left">
+      <a [href]="'tel:' + content.settings().phoneHref" class="topbar__item">
+        <app-icon name="phone" [size]="14" />
+        <span>{{ content.settings().phone }}</span>
+      </a>
+      <a [href]="'mailto:' + content.settings().email" class="topbar__item">
+        <app-icon name="mail" [size]="14" />
+        <span>{{ content.settings().email }}</span>
+      </a>
+      <span class="topbar__item topbar__item--muted">
+        <app-icon name="pin" [size]="14" />
+        <span>{{ content.settings().city }} · {{ content.settings().country }}</span>
+      </span>
+    </div>
+    <div class="topbar__right">
+      <span class="topbar__tagline">WE CREATE. WE CAPTURE. WE INSPIRE.</span>
+      <span class="topbar__divider"></span>
+      <div class="topbar__socials">
+        @for (social of content.settings().socials; track social.network) {
+          <a [href]="social.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="social.network">
+            <app-icon [name]="social.icon" [size]="14" />
+          </a>
+        }
+      </div>
+      <span class="topbar__divider"></span>
+      <div class="lang-switch" role="group" aria-label="Langue">
+        <button type="button" [class.is-active]="i18n.lang() === 'fr'" (click)="setLang('fr')">FR</button>
+        <span>/</span>
+        <button type="button" [class.is-active]="i18n.lang() === 'en'" (click)="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="site-header" [class.is-scrolled]="scrolled()">
+  <div class="shell site-header__inner">
+    <a [routerLink]="i18n.path('/')" class="site-header__logo" aria-label="SELECTA EMPIRE LIMITED — Accueil" (click)="closeMenu()">
+      <app-logo [size]="scrolled() ? 40 : 46" />
+    </a>
+
+    <nav class="main-nav" aria-label="Navigation principale">
+      @for (item of navItems; track item.path) {
+        <div class="main-nav__item" [class.has-menu]="item.children">
+          <a
+            [routerLink]="i18n.path(item.path)"
+            routerLinkActive="is-active"
+            [routerLinkActiveOptions]="{ exact: item.exact }"
+            class="main-nav__link sweep"
+          >
+            {{ i18n.t(item.label) }}
+            @if (item.children) {
+              <app-icon name="chevron-down" [size]="12" />
+            }
+          </a>
+
+          @if (item.children) {
+            <div class="mega">
+              <div class="mega__inner">
+                <div class="mega__head">
+                  <span class="eyebrow">{{ i18n.t('home.services.barTitle') }}</span>
+                  <a [routerLink]="i18n.path('/services')" class="link-arrow">
+                    {{ i18n.t('cta.seeAll') }}
+                    <app-icon name="arrow-right" [size]="14" />
+                  </a>
+                </div>
+                <ul class="mega__list">
+                  @for (service of content.services(); track service.slug) {
+                    <li>
+                      <a [routerLink]="[i18n.path('/services'), service.slug]">
+                        <span class="mega__icon"><app-icon [name]="service.icon" [size]="18" /></span>
+                        <span class="mega__text">
+                          <span class="mega__title">{{ i18n.loc(service.title, service.titleEn) }}</span>
+                          <span class="mega__desc">{{ i18n.loc(service.tags.join(' · '), service.tagsEn.join(' · ')) }}</span>
+                        </span>
+                        <app-icon name="arrow-up-right" [size]="14" class="mega__arrow" />
+                      </a>
+                    </li>
+                  }
+                </ul>
+              </div>
+            </div>
+          }
+        </div>
+      }
+    </nav>
+
+    <div class="site-header__actions">
+      <a [routerLink]="i18n.path('/devis')" class="btn btn--sm header-cta">
+        {{ i18n.t('cta.quote') }}
+        <app-icon name="arrow-right" [size]="15" />
+      </a>
+
+      <button
+        type="button"
+        class="burger"
+        [class.is-open]="menuOpen()"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen()"
+        [attr.aria-label]="menuOpen() ? i18n.t('nav.close') : i18n.t('nav.openMenu')"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+@if (menuOpen()) {
+  <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu principal">
+    <div class="mobile-menu__head">
+      <app-logo variant="light" [size]="40" />
+      <button type="button" class="mobile-menu__close" (click)="closeMenu()" aria-label="Fermer le menu">
+        <app-icon name="close" [size]="22" />
+      </button>
+    </div>
+
+    <nav class="mobile-menu__nav" aria-label="Navigation mobile">
+      @for (item of navItems; track item.path; let i = $index) {
+        <a [routerLink]="i18n.path(item.path)" (click)="closeMenu()">
+          <span class="mobile-menu__num">0{{ i + 1 }}</span>
+          <span>{{ i18n.t(item.label) }}</span>
+          <app-icon name="arrow-up-right" [size]="20" />
+        </a>
+      }
+    </nav>
+
+    <div class="mobile-menu__services">
+      <button type="button" class="mobile-menu__services-toggle" (click)="servicesOpen.set(!servicesOpen())">
+        <span>{{ i18n.t('common.ourServices') }}</span>
+        <app-icon [name]="servicesOpen() ? 'minus' : 'plus'" [size]="16" />
+      </button>
+      @if (servicesOpen()) {
+        <ul>
+          @for (service of content.services(); track service.slug) {
+            <li>
+              <a [routerLink]="[i18n.path('/services'), service.slug]" (click)="closeMenu()">
+                {{ i18n.loc(service.title, service.titleEn) }}
+                <app-icon name="arrow-right" [size]="14" />
+              </a>
+            </li>
+          }
+        </ul>
+      }
+    </div>
+
+    <div class="mobile-menu__footer">
+      <div class="mobile-menu__contact">
+        <a [href]="'tel:' + content.settings().phoneHref">{{ content.settings().phone }}</a>
+        <a [href]="'mailto:' + content.settings().email">{{ content.settings().email }}</a>
+      </div>
+      <div class="mobile-menu__bottom">
+        <div class="lang-switch lang-switch--light">
+          <button type="button" [class.is-active]="i18n.lang() === 'fr'" (click)="setLang('fr')">FR</button>
+          <span>/</span>
+          <button type="button" [class.is-active]="i18n.lang() === 'en'" (click)="setLang('en')">EN</button>
+        </div>
+        <a [routerLink]="i18n.path('/devis')" class="btn btn--sm" (click)="closeMenu()">
+          {{ i18n.t('cta.quote') }}
+          <app-icon name="arrow-right" [size]="15" />
+        </a>
+      </div>
+    </div>
+  </div>
+}

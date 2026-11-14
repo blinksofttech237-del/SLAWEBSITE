@@ -1,0 +1,62 @@
+@if (cookies.bannerOpen()) {
+  <div class="cookie-bar" role="dialog" aria-live="polite" aria-label="Cookies">
+    <app-icon name="shield" [size]="22" class="cookie-bar__icon" />
+    <p>
+      {{ i18n.t('cookies.text') }}
+      <a [routerLink]="i18n.path('/confidentialite')">{{ i18n.t('footer.privacy') }}</a>.
+    </p>
+    <div class="cookie-bar__actions">
+      <button type="button" class="btn btn--sm btn--ghost" (click)="refuseAll()">
+        {{ i18n.t('cookies.refuse') }}
+      </button>
+      <button type="button" class="btn btn--sm btn--outline" (click)="customize()">
+        {{ i18n.t('cookies.customize') }}
+      </button>
+      <button type="button" class="btn btn--sm" (click)="acceptAll()">
+        {{ i18n.t('cookies.accept') }}
+      </button>
+    </div>
+  </div>
+}
+
+@if (cookies.preferencesOpen()) {
+  <div class="overlay" role="dialog" aria-modal="true" aria-label="Préférences cookies">
+    <button type="button" class="overlay__close" (click)="cookies.closePreferences()" aria-label="Fermer">
+      <app-icon name="close" [size]="18" />
+    </button>
+    <div class="cookie-panel">
+      <span class="eyebrow">{{ i18n.t('footer.cookies') }}</span>
+      <h2 class="h3">{{ i18n.t('cookies.manage') }}</h2>
+      <p class="cookie-panel__intro">{{ i18n.t('cookies.text') }}</p>
+
+      <div class="cookie-option">
+        <div>
+          <strong>{{ i18n.t('cookies.necessary') }}</strong>
+        </div>
+        <span class="cookie-option__lock"><app-icon name="lock" [size]="15" /></span>
+      </div>
+
+      <label class="cookie-option">
+        <div>
+          <strong>{{ i18n.t('cookies.analytics') }}</strong>
+          <span>{{ i18n.t('cookies.analyticsDesc') }}</span>
+        </div>
+        <input
+          type="checkbox"
+          class="cookie-toggle"
+          [checked]="analytics()"
+          (change)="analytics.set(!analytics())"
+        />
+      </label>
+
+      <div class="cookie-panel__actions">
+        <button type="button" class="btn btn--sm btn--outline" (click)="refuseAll()">
+          {{ i18n.t('cookies.refuse') }}
+        </button>
+        <button type="button" class="btn btn--sm" (click)="save()">
+          {{ i18n.t('cookies.save') }}
+        </button>
+      </div>
+    </div>
+  </div>
+}

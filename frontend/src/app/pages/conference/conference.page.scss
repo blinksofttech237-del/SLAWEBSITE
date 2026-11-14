@@ -1,0 +1,459 @@
+.conference-intro__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.15rem;
+}
+
+.conference-intro__body {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.conference-intro__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.conference-intro__media {
+  position: relative;
+  min-height: 500px;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.conference-intro__media app-img {
+  width: 100%;
+  height: 100%;
+}
+
+.conference-intro__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 42%, rgba(5, 5, 5, 0.9) 100%);
+}
+
+.conference-intro__stamp {
+  position: absolute;
+  left: 1.4rem;
+  right: 1.4rem;
+  bottom: 1.4rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.conference-intro__stamp strong {
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 1.5vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  color: var(--paper);
+}
+
+/* ---------------- Pillars ---------------- */
+
+.conference-pillars__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.conference-pillar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: clamp(1.5rem, 2.6vw, 2.2rem);
+  background: var(--paper-soft);
+}
+
+.conference-pillar__num {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.2rem;
+  font-family: var(--font-alt);
+  font-size: 0.64rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.conference-pillar h3 {
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.conference-pillar p {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* ---------------- Team statement ---------------- */
+
+.conference-team {
+  position: relative;
+  padding-block: clamp(3.5rem, 7vw, 6.5rem);
+  background: var(--empire);
+  color: var(--paper);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.conference-team::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(to right, rgba(244, 241, 233, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(244, 241, 233, 0.08) 1px, transparent 1px);
+  background-size: 90px 90px;
+  mask-image: radial-gradient(ellipse at 30% 30%, #000 10%, transparent 80%);
+}
+
+.conference-team .blueprint {
+  opacity: 0.4;
+}
+
+.conference-team__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.conference-team__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+
+.conference-team__head .eyebrow {
+  color: rgba(244, 241, 233, 0.7);
+}
+
+.conference-team__head .eyebrow::before {
+  background: rgba(244, 241, 233, 0.6);
+}
+
+.conference-team__title {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4.6vw, 4.2rem);
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.conference-team__title span {
+  color: rgba(244, 241, 233, 0.55);
+}
+
+.conference-team__title strong {
+  color: var(--paper);
+  font-weight: 700;
+}
+
+.conference-team__head p {
+  max-width: 58ch;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: rgba(244, 241, 233, 0.78);
+}
+
+.conference-team__points {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(244, 241, 233, 0.25);
+}
+
+.conference-team__points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid rgba(244, 241, 233, 0.25);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: rgba(244, 241, 233, 0.86);
+}
+
+.conference-team__index {
+  font-family: var(--font-alt);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  color: rgba(244, 241, 233, 0.55);
+  padding-top: 0.15rem;
+}
+
+/* ---------------- Production / equipment ---------------- */
+
+.conference-production__split {
+  align-items: stretch;
+}
+
+.conference-equipment,
+.conference-deliverables {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.conference-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.conference-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--muted);
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.conference-list app-icon {
+  color: var(--empire);
+  margin-top: 2px;
+}
+
+.conference-list--light li {
+  color: rgba(244, 241, 233, 0.85);
+  border-color: rgba(244, 241, 233, 0.22);
+}
+
+.conference-list--light app-icon {
+  color: rgba(244, 241, 233, 0.8);
+}
+
+/* ---------------- Clients ---------------- */
+
+.conference-clients__list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+
+.conference-clients__item {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding-block: 0.85rem;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.conference-clients__item .num {
+  font-size: 0.64rem;
+  letter-spacing: 0.12em;
+  color: var(--empire);
+}
+
+.conference-clients__note {
+  margin-top: 1rem;
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* ---------------- Gallery ---------------- */
+
+.conference-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.conference-gallery__item {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  padding: 0;
+  background: var(--ink);
+}
+
+.conference-gallery__item--wide {
+  grid-column: span 2;
+  grid-row: span 2;
+  aspect-ratio: 1 / 1;
+}
+
+.conference-gallery__item app-img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.9s var(--ease);
+}
+
+.conference-gallery__item:hover app-img {
+  transform: scale(1.05);
+}
+
+.conference-gallery__zoom {
+  position: absolute;
+  right: 0.7rem;
+  bottom: 0.7rem;
+  display: grid;
+  place-items: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  border: 1px solid rgba(244, 241, 233, 0.45);
+  border-radius: 50%;
+  background: rgba(5, 5, 5, 0.45);
+  color: var(--paper);
+  backdrop-filter: blur(6px);
+}
+
+.conference-gallery__note {
+  margin-top: 1rem;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+/* ---------------- Quote section ---------------- */
+
+.conference-quote {
+  position: relative;
+  background: var(--ink);
+  color: var(--paper);
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.conference-quote::before {
+  content: 'SLA';
+  position: absolute;
+  right: -0.05em;
+  bottom: -0.35em;
+  z-index: -1;
+  font-family: var(--font-display);
+  font-size: clamp(12rem, 26vw, 24rem);
+  font-weight: 800;
+  letter-spacing: -0.08em;
+  line-height: 0.8;
+  color: rgba(244, 241, 233, 0.05);
+}
+
+.conference-quote__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.conference-quote__inner > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+
+.conference-quote__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 0.6rem;
+}
+
+.conference-quote__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: clamp(1.5rem, 2.6vw, 2.2rem);
+  border: 1px solid var(--line-light);
+  background: rgba(244, 241, 233, 0.035);
+  backdrop-filter: blur(10px);
+}
+
+.conference-quote__label {
+  font-family: var(--font-alt);
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-dark);
+}
+
+.conference-quote__service {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  font-weight: 500;
+  color: var(--empire-soft);
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--line-light);
+}
+
+.conference-quote__checks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.2rem;
+}
+
+.conference-quote__checks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: rgba(244, 241, 233, 0.78);
+}
+
+.conference-quote__checks app-icon {
+  color: var(--empire-soft);
+  margin-top: 2px;
+}
+
+.conference-faq .accordion {
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .conference-pillars__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .conference-team__inner,
+  .conference-quote__inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .conference-intro__media {
+    min-height: 400px;
+    aspect-ratio: 16 / 10;
+  }
+  .conference-gallery__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .conference-pillars__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .conference-gallery__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .conference-gallery__item--wide {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}

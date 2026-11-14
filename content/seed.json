@@ -1,0 +1,476 @@
+{
+  "_readme": "Contenu de démonstration SELECTA EMPIRE LIMITED. Les coordonnées, réalisations, événements et articles sont des EXEMPLES à remplacer depuis le back-office. Aucun témoignage ni partenaire n'est publié par défaut, conformément aux règles de preuve commerciale.",
+  "settings": {
+    "companyName": "SELECTA EMPIRE LIMITED",
+    "shortName": "SELECTA EMPIRE",
+    "monogram": "SLA",
+    "tagline": "WE CREATE. WE CAPTURE. WE INSPIRE.",
+    "phone": "+000 000 000 000",
+    "phoneHref": "+000000000000",
+    "email": "contact@selectaempire.com",
+    "address": "Adresse du siège à confirmer",
+    "city": "Afrique de l'Ouest",
+    "country": "International",
+    "hours": "Lun — Ven · 08:30 — 18:00",
+    "contactPending": true,
+    "socials": [
+      { "network": "Facebook", "url": "https://facebook.com/", "icon": "facebook" },
+      { "network": "Instagram", "url": "https://instagram.com/", "icon": "instagram" },
+      { "network": "LinkedIn", "url": "https://linkedin.com/", "icon": "linkedin" },
+      { "network": "YouTube", "url": "https://youtube.com/", "icon": "youtube" },
+      { "network": "TikTok", "url": "https://tiktok.com/", "icon": "tiktok" }
+    ],
+    "showreel": {
+      "url": "",
+      "poster": "conference-stage",
+      "caption": "Showreel officiel — emplacement réservé à la vidéo SELECTA EMPIRE"
+    },
+    "stats": [
+      { "key": "coverage", "value": null, "suffix": "", "labelFr": "Couverture multicaméra", "labelEn": "Multi-camera coverage", "noteFr": "Jusqu'à 6 angles simultanés", "noteEn": "Up to 6 simultaneous angles" },
+      { "key": "photo", "value": null, "suffix": "", "labelFr": "Photographie professionnelle", "labelEn": "Professional photography", "noteFr": "Reportage, corporate, portraits", "noteEn": "Reportage, corporate, portraits" },
+      { "key": "streaming", "value": null, "suffix": "", "labelFr": "Diffusion en direct", "labelEn": "Live streaming", "noteFr": "Plateformes & régie dédiée", "noteEn": "Platforms & dedicated control room" },
+      { "key": "delivery", "value": null, "suffix": "", "labelFr": "Livraison structurée", "labelEn": "Structured delivery", "noteFr": "Workflow de post-production maîtrisé", "noteEn": "Controlled post-production workflow" }
+    ],
+    "seo": {
+      "title": "SELECTA EMPIRE LIMITED — Événementiel, production audiovisuelle & photographie",
+      "description": "Agence événementielle et maison de production audiovisuelle : couverture de conférences, captation multicaméra, streaming, photographie corporate et communication visuelle.",
+      "keywords": "agence événementielle, couverture de conférences, photographe professionnel, production audiovisuelle, captation vidéo événementielle, streaming professionnel, photographie corporate",
+      "ogImage": "hero-conference"
+    },
+    "institutionalClients": [
+      "Ministères",
+      "Ambassades",
+      "ONG",
+      "Organisations internationales",
+      "Universités",
+      "Entreprises",
+      "Institutions financières"
+    ]
+  },
+  "services": [
+    {
+      "slug": "couverture-conferences",
+      "title": "Couverture de conférences",
+      "titleEn": "Conference coverage",
+      "excerpt": "Photographie officielle, captation multicaméra et diffusion en direct de vos sommets, forums et assemblées.",
+      "excerptEn": "Official photography, multi-camera recording and live streaming for your summits, forums and assemblies.",
+      "tags": ["Photo", "Vidéo", "Streaming"],
+      "tagsEn": ["Photo", "Video", "Streaming"],
+      "image": "conference-stage",
+      "icon": "conference",
+      "order": 1,
+      "featured": true
+    },
+    {
+      "slug": "evenementiel",
+      "title": "Organisation d'événements",
+      "titleEn": "Event management",
+      "excerpt": "Conception, production et pilotage d'événements corporate, cérémonies officielles et concerts.",
+      "excerptEn": "Design, production and management of corporate events, official ceremonies and concerts.",
+      "tags": ["Concerts", "Cérémonies", "Corporate"],
+      "tagsEn": ["Concerts", "Ceremonies", "Corporate"],
+      "image": "event-stage",
+      "icon": "event",
+      "order": 2,
+      "featured": true
+    },
+    {
+      "slug": "production-audiovisuelle",
+      "title": "Production audiovisuelle",
+      "titleEn": "Video production",
+      "excerpt": "Films institutionnels, spots publicitaires, clips et documentaires portés par une exigence cinématographique.",
+      "excerptEn": "Institutional films, commercials, music videos and documentaries driven by cinematic standards.",
+      "tags": ["Films", "Spots", "Clips", "Documentaires"],
+      "tagsEn": ["Films", "Commercials", "Music videos", "Documentaries"],
+      "image": "cinema-camera",
+      "icon": "film",
+      "order": 3,
+      "featured": true
+    },
+    {
+      "slug": "photographie",
+      "title": "Photographie professionnelle",
+      "titleEn": "Professional photography",
+      "excerpt": "Portraits, reportages et photographie corporate au service de l'image de votre institution.",
+      "excerptEn": "Portraits, reportage and corporate photography that elevate your institution's image.",
+      "tags": ["Portraits", "Reportages", "Corporate"],
+      "tagsEn": ["Portraits", "Reportage", "Corporate"],
+      "image": "photographer",
+      "icon": "camera",
+      "order": 4,
+      "featured": true
+    },
+    {
+      "slug": "communication-visuelle",
+      "title": "Communication visuelle",
+      "titleEn": "Visual communication",
+      "excerpt": "Identité de marque, design et motion design pour une communication cohérente sur tous vos supports.",
+      "excerptEn": "Brand identity, design and motion design for consistent communication across every medium.",
+      "tags": ["Design", "Motion Design", "Branding"],
+      "tagsEn": ["Design", "Motion Design", "Branding"],
+      "image": "design-work",
+      "icon": "design",
+      "order": 5,
+      "featured": true
+    }
+  ],
+  "serviceDetails": {
+    "couverture-conferences": {
+      "introFr": "Une conférence institutionnelle ne se rejoue pas. Chaque prise de parole, chaque panel, chaque rencontre officielle porte la voix de votre organisation. Notre équipe déploie un dispositif photo, vidéo et streaming pensé pour restituer l'ampleur de l'événement — sans jamais perturber son déroulé.",
+      "introEn": "An institutional conference cannot be replayed. Every speech, every panel, every official encounter carries your organisation's voice. Our team deploys a photo, video and streaming setup designed to restore the scale of the event — without ever disrupting its flow.",
+      "capabilitiesFr": [
+        "Photographie officielle et couverture des délégations",
+        "Captation vidéo intégrale des sessions",
+        "Production multicaméra avec régie sur site",
+        "Streaming en direct et diffusion multi-plateformes",
+        "Interviews et témoignages des intervenants",
+        "Couverture des panels et tables rondes",
+        "Aftermovies et capsules de restitution",
+        "Reportages institutionnels",
+        "Archivage et livraison organisée des médias"
+      ],
+      "capabilitiesEn": [
+        "Official photography and delegation coverage",
+        "Full video recording of all sessions",
+        "Multi-camera production with on-site control room",
+        "Live streaming and multi-platform delivery",
+        "Speaker interviews and testimonials",
+        "Panel and round-table coverage",
+        "Aftermovies and recap capsules",
+        "Institutional reports",
+        "Archiving and organised media delivery"
+      ],
+      "equipmentFr": ["Régie multicaméra HD/4K", "Caméras broadcast & cinéma", "Micros HF et captation audio multipiste", "Éclairage studio & LED", "Encodeurs de streaming redondants", "Connectivité filaire et 4G/5G de secours"],
+      "equipmentEn": ["HD/4K multi-camera control room", "Broadcast & cinema cameras", "Wireless microphones and multitrack audio", "Studio & LED lighting", "Redundant streaming encoders", "Wired and 4G/5G backup connectivity"],
+      "deliverablesFr": ["Sélection photo retouchée", "Fichiers vidéo des sessions", "Aftermovie", "Capsules réseaux sociaux", "Livraison via galerie sécurisée"],
+      "deliverablesEn": ["Retouched photo selection", "Session video files", "Aftermovie", "Social media capsules", "Delivery via secure gallery"]
+    },
+    "evenementiel": {
+      "introFr": "De la première réunion de cadrage à la dernière lumière éteinte, nous orchestrons chaque détail : scénographie, logistique, coordination des prestataires et expérience invité. Un interlocuteur unique, une exécution sans faille.",
+      "introEn": "From the first briefing to the last light turned off, we orchestrate every detail: stage design, logistics, supplier coordination and guest experience. One single point of contact, flawless execution.",
+      "capabilitiesFr": ["Conception et scénographie", "Gestion de la production et des prestataires", "Coordination logistique et protocole", "Cérémonies officielles et remises de prix", "Lancements de produit et soirées corporate", "Concerts et spectacles"],
+      "capabilitiesEn": ["Concept and stage design", "Production and supplier management", "Logistics and protocol coordination", "Official ceremonies and awards", "Product launches and corporate evenings", "Concerts and live shows"],
+      "equipmentFr": ["Régie son et lumière", "Structures et scénographie", "Mobilier événementiel", "Systèmes de sonorisation adaptés aux salles"],
+      "equipmentEn": ["Sound and lighting control", "Structures and staging", "Event furniture", "Sound systems sized to each venue"],
+      "deliverablesFr": ["Note d'intention et plan de production", "Rétroplanning détaillé", "Coordination sur site", "Bilan et recommandations"],
+      "deliverablesEn": ["Creative brief and production plan", "Detailed timeline", "On-site coordination", "Debrief and recommendations"]
+    },
+    "production-audiovisuelle": {
+      "introFr": "Un film institutionnel raconte une ambition. Nous construisons chaque projet comme une œuvre : écriture, direction artistique, tournage et post-production sont pensés ensemble pour produire un contenu qui traverse le temps.",
+      "introEn": "An institutional film tells a story of ambition. We build every project as a body of work: writing, art direction, shooting and post-production are designed together to produce content that stands the test of time.",
+      "capabilitiesFr": ["Films institutionnels", "Spots publicitaires", "Clips musicaux", "Documentaires", "Films de marque et manifestes", "Post-production et étalonnage"],
+      "capabilitiesEn": ["Institutional films", "Commercials", "Music videos", "Documentaries", "Brand films and manifestos", "Post-production and colour grading"],
+      "equipmentFr": ["Caméras cinéma 4K/6K", "Optiques cinéma et anamorphiques", "Éclairage plateau", "Enregistrement audio professionnel", "Station de montage et étalonnage"],
+      "equipmentEn": ["4K/6K cinema cameras", "Cinema and anamorphic lenses", "Studio lighting", "Professional audio recording", "Editing and grading suite"],
+      "deliverablesFr": ["Scénario et storyboard", "Rushes organisés", "Montage validé", "Master haute définition", "Versions réseaux sociaux"],
+      "deliverablesEn": ["Script and storyboard", "Organised rushes", "Approved edit", "High-definition master", "Social media versions"]
+    },
+    "photographie": {
+      "introFr": "L'image photographique fixe l'instant et construit la mémoire d'une institution. Notre approche documentaire et soignée restitue l'énergie d'un événement comme la stature d'un dirigeant.",
+      "introEn": "Photography freezes the moment and builds an institution's memory. Our documentary, meticulous approach captures both the energy of an event and the stature of a leader.",
+      "capabilitiesFr": ["Photographie officielle d'événements", "Portraits de dirigeants", "Photographie corporate", "Reportages terrain", "Photographie de spectacle", "Retouche et post-production"],
+      "capabilitiesEn": ["Official event photography", "Executive portraits", "Corporate photography", "Field reportage", "Live performance photography", "Retouching and post-production"],
+      "equipmentFr": ["Boîtiers plein format", "Optiques lumineuses et téléobjectifs", "Éclairage de portrait", "Double sauvegarde sur site"],
+      "equipmentEn": ["Full-frame bodies", "Fast lenses and telephoto", "Portrait lighting", "On-site double backup"],
+      "deliverablesFr": ["Sélection éditorialisée", "Retouche professionnelle", "Galerie en ligne", "Fichiers haute résolution"],
+      "deliverablesEn": ["Curated selection", "Professional retouching", "Online gallery", "High-resolution files"]
+    },
+    "communication-visuelle": {
+      "introFr": "Une communication visuelle cohérente transforme une organisation en marque identifiable. Nous concevons les systèmes graphiques qui prolongent vos événements bien après leur clôture.",
+      "introEn": "Consistent visual communication turns an organisation into a recognisable brand. We design graphic systems that extend your events long after they close.",
+      "capabilitiesFr": ["Identité visuelle et branding", "Design éditorial", "Motion design", "Habillage d'événement", "Supports imprimés et digitaux", "Déclinaisons réseaux sociaux"],
+      "capabilitiesEn": ["Visual identity and branding", "Editorial design", "Motion design", "Event branding", "Print and digital assets", "Social media adaptations"],
+      "equipmentFr": ["Suites de création professionnelles", "Motion design et animation", "Préparation des fichiers pour l'impression"],
+      "equipmentEn": ["Professional creative suites", "Motion design and animation", "Print-ready file preparation"],
+      "deliverablesFr": ["Charte graphique", "Kit de communication", "Animations et habillages", "Fichiers sources"],
+      "deliverablesEn": ["Brand guidelines", "Communication kit", "Animations and event packages", "Source files"]
+    }
+  },
+  "projects": [
+    {
+      "slug": "sommet-economies-emergentes",
+      "title": "Sommet des Économies Émergentes",
+      "titleEn": "Emerging Economies Summit",
+      "category": "conferences",
+      "categoryLabel": "Conférences",
+      "categoryLabelEn": "Conferences",
+      "year": "2025",
+      "date": "2025-06-12",
+      "location": "Centre de conférences international",
+      "client": "Institution internationale",
+      "cover": "conference-audience",
+      "excerpt": "Dispositif photo, vidéo et streaming pour un sommet de trois jours réunissant délégations et intervenants internationaux.",
+      "excerptEn": "Photo, video and streaming setup for a three-day summit gathering international delegations and speakers.",
+      "descriptionFr": "Étude de cas de démonstration : couverture intégrale d'un sommet international. Deux équipes photo, quatre caméras, régie sur site et diffusion en direct des plénières. Les contenus ont été livrés en trois formats : galerie presse, aftermovie et capsules quotidiennes.",
+      "descriptionEn": "Demonstration case study: full coverage of an international summit. Two photo teams, four cameras, on-site control room and live streaming of the plenaries. Content was delivered in three formats: press gallery, aftermovie and daily capsules.",
+      "gallery": ["conference-stage", "conference-hall", "conference-audience", "conference-forum"],
+      "videoUrl": "",
+      "featured": true,
+      "isDemo": true
+    },
+    {
+      "slug": "ceremonie-excellence-corporate",
+      "title": "Cérémonie Excellence Corporate",
+      "titleEn": "Excellence Corporate Ceremony",
+      "category": "events",
+      "categoryLabel": "Événementiel",
+      "categoryLabelEn": "Events",
+      "year": "2025",
+      "date": "2025-03-21",
+      "location": "Hôtel & centre de congrès",
+      "client": "Groupe privé",
+      "cover": "event-stage",
+      "excerpt": "Cérémonie de distinction : scénographie, protocole, captation et photographie officielle.",
+      "excerptEn": "Awards ceremony: staging, protocol, filming and official photography.",
+      "descriptionFr": "Exemple de réalisation : conception d'une cérémonie de remise de prix, coordination du protocole, régie lumière et couverture photo-vidéo complète. Une soirée pensée pour valoriser les lauréats et produire des contenus réutilisables toute l'année.",
+      "descriptionEn": "Demonstration project: design of an awards ceremony, protocol coordination, lighting control and complete photo-video coverage. An evening designed to celebrate the winners and produce content reusable all year.",
+      "gallery": ["event-night", "event-stage", "concert-lights"],
+      "videoUrl": "",
+      "featured": true,
+      "isDemo": true
+    },
+    {
+      "slug": "film-institutionnel-groupe",
+      "title": "Film institutionnel — Groupe panafricain",
+      "titleEn": "Institutional film — Pan-African group",
+      "category": "video",
+      "categoryLabel": "Production vidéo",
+      "categoryLabelEn": "Video production",
+      "year": "2024",
+      "date": "2024-11-08",
+      "location": "Multi-sites",
+      "client": "Groupe panafricain",
+      "cover": "cinema-camera",
+      "excerpt": "Un film de marque de 4 minutes pour raconter vingt ans de croissance et d'impact.",
+      "excerptEn": "A 4-minute brand film telling twenty years of growth and impact.",
+      "descriptionFr": "Exemple de réalisation : écriture, repérages et tournage multi-sites pour un film institutionnel. Interviews de dirigeants, séquences opérationnelles et étalonnage cinéma. Déclinaisons en versions 4 min, 90 s et capsules réseaux sociaux.",
+      "descriptionEn": "Demonstration project: scriptwriting, location scouting and multi-site shooting for an institutional film. Executive interviews, operational sequences and cinematic grading. Adapted into 4-minute, 90-second and social media versions.",
+      "gallery": ["video-production", "film-set", "cinema-camera", "office-meeting"],
+      "videoUrl": "",
+      "featured": true,
+      "isDemo": true
+    },
+    {
+      "slug": "portraits-direction-banque",
+      "title": "Portraits de direction — Banque & Finance",
+      "titleEn": "Executive portraits — Banking & Finance",
+      "category": "photography",
+      "categoryLabel": "Photographie",
+      "categoryLabelEn": "Photography",
+      "year": "2024",
+      "date": "2024-09-16",
+      "location": "Studio & siège du client",
+      "client": "Institution financière",
+      "cover": "portrait",
+      "excerpt": "Une série de portraits institutionnels cohérente pour le rapport annuel et la communication digitale.",
+      "excerptEn": "A consistent series of institutional portraits for the annual report and digital communication.",
+      "descriptionFr": "Exemple de réalisation : direction artistique, studio mobile et retouche fine pour une série de portraits de membres du comité exécutif. Un système visuel unique, décliné pour le print et le digital.",
+      "descriptionEn": "Demonstration project: art direction, mobile studio and fine retouching for a series of executive committee portraits. One visual system, adapted for print and digital.",
+      "gallery": ["portrait", "photographer", "corporate-meeting"],
+      "videoUrl": "",
+      "featured": false,
+      "isDemo": true
+    },
+    {
+      "slug": "lancement-marque-nuit-bleue",
+      "title": "Lancement de marque — Nuit Bleue",
+      "titleEn": "Brand launch — Blue Night",
+      "category": "corporate",
+      "categoryLabel": "Corporate",
+      "categoryLabelEn": "Corporate",
+      "year": "2024",
+      "date": "2024-05-30",
+      "location": "Espace événementiel",
+      "client": "Marque lifestyle",
+      "cover": "event-night",
+      "excerpt": "Direction artistique et production d'une soirée de lancement entre scénographie et contenus live.",
+      "excerptEn": "Art direction and production of a launch evening blending staging and live content.",
+      "descriptionFr": "Exemple de réalisation : création d'un univers visuel bleu nuit, scénographie immersive, captation des temps forts et production d'un aftermovie en moins de 48 heures.",
+      "descriptionEn": "Demonstration project: creation of a midnight-blue visual universe, immersive staging, filming of highlights and an aftermovie produced in under 48 hours.",
+      "gallery": ["event-night", "festival", "concert-crowd"],
+      "videoUrl": "",
+      "featured": false,
+      "isDemo": true
+    },
+    {
+      "slug": "forum-universites-innovation",
+      "title": "Forum Universités & Innovation",
+      "titleEn": "Universities & Innovation Forum",
+      "category": "conferences",
+      "categoryLabel": "Conférences",
+      "categoryLabelEn": "Conferences",
+      "year": "2023",
+      "date": "2023-10-05",
+      "location": "Campus universitaire",
+      "client": "Université",
+      "cover": "conference-hall",
+      "excerpt": "Couverture photo et vidéo d'un forum académique réunissant chercheurs, étudiants et partenaires.",
+      "excerptEn": "Photo and video coverage of an academic forum bringing together researchers, students and partners.",
+      "descriptionFr": "Exemple de réalisation : couverture des conférences plénières, ateliers et cérémonie de clôture. Livraison d'une galerie complète, d'un reportage vidéo et de dix capsules d'interviews.",
+      "descriptionEn": "Demonstration project: coverage of plenary sessions, workshops and closing ceremony. Delivery of a complete gallery, a video report and ten interview capsules.",
+      "gallery": ["conference-hall", "conference-forum", "conference-audience"],
+      "videoUrl": "",
+      "featured": false,
+      "isDemo": true
+    }
+  ],
+  "events": [
+    {
+      "slug": "masterclass-couverture-evenement",
+      "title": "Masterclass — Réussir la couverture de son événement",
+      "titleEn": "Masterclass — Successful event coverage",
+      "startDate": "2026-12-04",
+      "endDate": "2026-12-04",
+      "location": "En ligne",
+      "type": "Masterclass",
+      "format": "En ligne",
+      "image": "conference-stage",
+      "summary": "Une session de travail sur les bonnes pratiques photo, vidéo et streaming avant, pendant et après un événement institutionnel.",
+      "summaryEn": "A working session on photo, video and streaming best practices before, during and after an institutional event.",
+      "status": "upcoming",
+      "isDemo": true
+    },
+    {
+      "slug": "rencontres-image-institutionnelle",
+      "title": "Rencontres de l'image institutionnelle",
+      "titleEn": "Institutional image meetings",
+      "startDate": "2027-02-18",
+      "endDate": "2027-02-19",
+      "location": "À confirmer",
+      "type": "Rencontre professionnelle",
+      "format": "Présentiel",
+      "image": "photographer",
+      "summary": "Deux journées d'échanges autour de la photographie corporate et de la production audiovisuelle.",
+      "summaryEn": "Two days of exchange around corporate photography and video production.",
+      "status": "upcoming",
+      "isDemo": true
+    },
+    {
+      "slug": "forum-conference-2025",
+      "title": "Forum des organisations internationales",
+      "titleEn": "International organisations forum",
+      "startDate": "2025-11-14",
+      "endDate": "2025-11-15",
+      "location": "Centre de conférences",
+      "type": "Conférence",
+      "format": "Présentiel",
+      "image": "conference-audience",
+      "summary": "Exemple d'événement passé : couverture photo, vidéo et streaming d'un forum international.",
+      "summaryEn": "Example of a past event: photo, video and streaming coverage of an international forum.",
+      "status": "past",
+      "isDemo": true
+    }
+  ],
+  "posts": [
+    {
+      "slug": "checklist-couverture-conference-30-jours",
+      "title": "Couverture de conférence : la checklist des 30 jours avant l'événement",
+      "titleEn": "Conference coverage: the 30-day checklist",
+      "category": "Conseils",
+      "categoryEn": "Insights",
+      "author": "SELECTA EMPIRE",
+      "publishedAt": "2026-10-02",
+      "readingTime": 6,
+      "cover": "conference-hall",
+      "excerpt": "Un événement institutionnel se prépare aussi sur le plan visuel. Voici les points à verrouiller un mois avant le jour J.",
+      "excerptEn": "An institutional event is also prepared visually. Here are the points to lock down one month before the big day.",
+      "contentFr": "La couverture d'une conférence ne commence pas le matin de l'ouverture. Trente jours avant, plusieurs décisions conditionnent la qualité du résultat.\n\n## 1. Cartographier les temps forts\nPlénières, panels, cérémonies, signatures d'accords : établissez la liste des séquences qui doivent absolument être couvertes. Partagez-la avec la production pour construire le plan de tournage.\n\n## 2. Définir les livrables et les délais\nUne galerie presse pour l'ouverture ? Un aftermovie sous 48 heures ? Des capsules quotidiennes ? La liste des livrables doit être écrite et validée, avec un calendrier réaliste.\n\n## 3. Prévoir l'accès et les autorisations\nBadges, zones réservées, tribunes, régie : anticipez les accréditations. Pour les personnalités et les délégations, définissez les règles de prise de vue à l'avance.\n\n## 4. Tester la connectivité\nLe streaming dépend de la salle autant que de la régie. Demandez une connexion dédiée, prévoyez une redondance 4G/5G et réalisez un test complet la veille.\n\n## 5. Organiser la post-production avant le tournage\nNommez les responsables de tri, de retouche et de montage. Une couverture réussie est une chaîne complète, pas seulement une équipe sur place.",
+
+      "contentEn": "Conference coverage does not start on the morning of the opening. Thirty days before, several decisions shape the quality of the outcome.\n\n## 1. Map the key moments\nPlenaries, panels, ceremonies, agreement signings: list the sequences that must be covered. Share it with the production team to build the shooting plan.\n\n## 2. Define deliverables and deadlines\nA press gallery for the opening? An aftermovie within 48 hours? Daily capsules? The deliverable list must be written, approved and realistic.\n\n## 3. Plan access and authorisations\nBadges, restricted areas, press stands, control room: anticipate accreditations. For dignitaries and delegations, define filming rules in advance.\n\n## 4. Test connectivity\nStreaming depends on the venue as much as the control room. Request a dedicated connection, plan 4G/5G redundancy and run a full test the day before.\n\n## 5. Organise post-production before shooting\nAssign sorting, retouching and editing responsibilities. Successful coverage is a complete chain, not just a team on site."
+    },
+    {
+      "slug": "multicamera-ou-monocamera",
+      "title": "Multicaméra ou mono-caméra : comment choisir pour votre événement ?",
+      "titleEn": "Multi-camera or single camera: how to choose?",
+      "category": "Production",
+      "categoryEn": "Production",
+      "author": "SELECTA EMPIRE",
+      "publishedAt": "2026-09-12",
+      "readingTime": 5,
+      "cover": "cinema-camera",
+      "excerpt": "Le nombre de caméras ne fait pas la qualité. Le bon dispositif dépend de votre scénographie, de vos intervenants et de vos livrables.",
+      "excerptEn": "More cameras do not mean better quality. The right setup depends on your staging, speakers and deliverables.",
+      "contentFr": "Le multicaméra séduit, mais il doit répondre à un besoin précis. Voici comment arbitrer.\n\n## Quand la mono-caméra suffit\nUne allocution unique, une interview, une captation de discours : une caméra bien placée, un audio propre et un cadre maîtrisé produisent un résultat excellent, pour un budget contenu.\n\n## Quand passer au multicaméra\nDès que l'événement comporte plusieurs sources d'intérêt simultanées — scène, public, réactions, coulisses — le multicaméra restitue l'énergie réelle. Il est également indispensable pour le streaming, qui exige des angles de coupe.\n\n## Le vrai facteur de qualité\nLa régie. Un dispositif à quatre caméras mal coordonné sera inférieur à deux caméras pilotées par un chef opérateur expérimenté. La préparation, le repérage et la communication entre l'équipe et l'organisation comptent davantage que le nombre de boîtiers.\n\n## Notre recommandation\nPour une conférence institutionnelle, un socle de trois caméras — plan large, plan serré intervenant, plan public — couvre l'essentiel. Ajoutez une caméra mobile pour les coulisses et les interviews.",
+
+      "contentEn": "Multi-camera is appealing, but it must answer a specific need. Here is how to decide.\n\n## When a single camera is enough\nA single speech, an interview, a recorded address: one well-placed camera, clean audio and a controlled frame deliver an excellent result on a contained budget.\n\n## When to move to multi-camera\nAs soon as the event has several simultaneous points of interest — stage, audience, reactions, backstage — multi-camera restores the real energy. It is also essential for streaming, which requires cutaway angles.\n\n## The real quality factor\nThe control room. Four poorly coordinated cameras will be inferior to two cameras led by an experienced operator. Preparation, scouting and communication between the team and the organisers matter more than the number of bodies.\n\n## Our recommendation\nFor an institutional conference, a three-camera base — wide shot, speaker close-up, audience — covers the essentials. Add a roaming camera for backstage and interviews."
+    },
+    {
+      "slug": "streaming-professionnel-erreurs",
+      "title": "Streaming professionnel : les six erreurs à éviter",
+      "titleEn": "Professional streaming: six mistakes to avoid",
+      "category": "Streaming",
+      "categoryEn": "Streaming",
+      "author": "SELECTA EMPIRE",
+      "publishedAt": "2026-07-28",
+      "readingTime": 5,
+      "cover": "conference-stage",
+      "excerpt": "Une diffusion en direct ne pardonne pas l'improvisation. Ces six points font la différence entre un direct maîtrisé et une incident.",
+      "excerptEn": "Live streaming does not forgive improvisation. These six points separate a controlled broadcast from an incident.",
+      "contentFr": "## 1. Négliger l'audio\nLe public pardonne une image imparfaite, jamais un son inaudible. Priorisez les micros, la console et un contrôle permanent au casque.\n\n## 2. Compter sur le Wi-Fi du lieu\nLe réseau partagé d'un hôtel ou d'un centre de conférences est imprévisible. Exigez une ligne dédiée et prévoyez une redondance.\n\n## 3. Diffuser sans répétition\nUn test la veille ne suffit pas. Répétez avec les contenus réels, les transitions et les intervenants à distance.\n\n## 4. Oublier les droits et la modération\nMusique, vidéos, images : vérifiez les droits de diffusion. Prévoyez aussi la modération du chat si la plateforme le permet.\n\n## 5. Sous-dimensionner l'équipe\nUn direct se pilote : réalisateur, opérateur streaming, ingénieur son. Une personne seule ne peut pas tout tenir.\n\n## 6. Ne pas archiver\nEnregistrez toujours le programme envoyé et les sources. C'est votre matière première pour les extraits et l'archivage institutionnel.",
+
+      "contentEn": "## 1. Neglecting audio\nAudiences forgive imperfect image, never inaudible sound. Prioritise microphones, the console and permanent headphone monitoring.\n\n## 2. Relying on venue Wi-Fi\nShared networks in hotels or conference centres are unpredictable. Require a dedicated line and plan redundancy.\n\n## 3. Streaming without a rehearsal\nA test the day before is not enough. Rehearse with real content, transitions and remote speakers.\n\n## 4. Forgetting rights and moderation\nMusic, videos, images: verify broadcast rights. Plan chat moderation where the platform allows it.\n\n## 5. Understaffing the team\nA live broadcast is piloted: director, streaming operator, sound engineer. One person cannot hold everything.\n\n## 6. Not archiving\nAlways record the outgoing programme and the sources. It is your raw material for highlights and institutional archiving."
+    },
+    {
+      "slug": "photographie-corporate-image-institution",
+      "title": "Photographie corporate : révéler l'image de votre institution",
+      "titleEn": "Corporate photography: revealing your institution",
+      "category": "Photographie",
+      "categoryEn": "Photography",
+      "author": "SELECTA EMPIRE",
+      "publishedAt": "2026-06-05",
+      "readingTime": 4,
+      "cover": "portrait",
+      "excerpt": "Une photographie institutionnelle cohérente ne s'improvise pas. Elle se construit autour d'une intention et d'un système.",
+      "excerptEn": "Consistent institutional photography is not improvised. It is built around an intention and a system.",
+      "contentFr": "## Une intention avant une esthétique\nQue doit ressentir le lecteur ? Confiance, proximité, exigence ? Le choix des lumières, des cadrages et des décors découle de cette intention, pas d'une tendance.\n\n## Un système, pas des images isolées\nCadrages, arrière-plans, traitement des couleurs : définissez des règles simples et appliquez-les à tous les portraits. La cohérence crée la reconnaissance.\n\n## Le contexte comme signature\nUn dirigeant dans son environnement — un atelier, un site, une salle de réunion — raconte davantage qu'un fond neutre. Le décor doit soutenir le propos, jamais le concurrencer.\n\n## Penser les usages\nRapport annuel, site web, réseaux sociaux, presse : prévoyez des cadrages verticaux et horizontaux, des marges pour le texte et des versions haute résolution. Une bonne campagne photo se juge à sa réutilisation.",
+
+      "contentEn": "## An intention before an aesthetic\nWhat should the reader feel? Trust, closeness, rigour? The choice of lighting, framing and settings flows from that intention, not from a trend.\n\n## A system, not isolated images\nFraming, backgrounds, colour treatment: define simple rules and apply them to every portrait. Consistency builds recognition.\n\n## Context as a signature\nAn executive in their environment — a workshop, a site, a meeting room — says more than a neutral background. The setting must support the message, never compete with it.\n\n## Design for use\nAnnual report, website, social media, press: plan vertical and horizontal framings, room for text and high-resolution versions. A good photo campaign is judged by its reuse."
+    }
+  ],
+  "testimonials": [],
+  "partners": [],
+  "teamPoles": [
+    { "name": "Direction créative", "role": "Concept, direction artistique & écriture", "icon": "design" },
+    { "name": "Production & régie", "role": "Pilotage technique, logistique & protocol", "icon": "event" },
+    { "name": "Image", "role": "Photographie, cadrage & lumière", "icon": "camera" },
+    { "name": "Post-production", "role": "Montage, étalonnage, son & livraison", "icon": "film" }
+  ],
+  "faq": [
+    {
+      "qFr": "Combien de temps à l'avance faut-il vous contacter ?",
+      "aFr": "Pour une conférence ou un événement d'envergure, nous recommandons un délai de 4 à 8 semaines afin de préparer le repérage, le dispositif et les autorisations. Pour une demande urgente, contactez-nous : nous étudions chaque situation.",
+      "qEn": "How far in advance should we contact you?",
+      "aEn": "For a conference or a large-scale event, we recommend 4 to 8 weeks to prepare scouting, the technical setup and authorisations. For urgent requests, contact us: we review every situation."
+    },
+    {
+      "qFr": "Intervenez-vous en dehors de votre ville de résidence ?",
+      "aFr": "Oui. Nous nous déplaçons sur l'ensemble du territoire et à l'international. Les frais de déplacement et d'hébergement sont précisés dans le devis.",
+      "qEn": "Do you work outside your home city?",
+      "aEn": "Yes. We travel nationally and internationally. Travel and accommodation costs are detailed in the quote."
+    },
+    {
+      "qFr": "Quels sont les délais de livraison des contenus ?",
+      "aFr": "La sélection photo est généralement livrée sous 72 heures. L'aftermovie sous 5 à 10 jours ouvrés. Les délais exacts sont contractualisés selon le volume et le niveau de post-production.",
+      "qEn": "What are the content delivery times?",
+      "aEn": "The photo selection is usually delivered within 72 hours. The aftermovie within 5 to 10 working days. Exact timelines are contracted according to volume and post-production level."
+    },
+    {
+      "qFr": "Pouvez-vous assurer uniquement le streaming ?",
+      "aFr": "Oui. Nous proposons des prestations séparées : photographie, captation, streaming, montage. La plupart de nos clients choisissent une prestation combinée pour garantir la cohérence des contenus.",
+      "qEn": "Can you handle streaming only?",
+      "aEn": "Yes. We offer separate services: photography, recording, streaming, editing. Most clients choose a combined service to guarantee content consistency."
+    },
+    {
+      "qFr": "Comment sont sécurisées les données de votre événement ?",
+      "aFr": "Les rushes sont sauvegardés sur deux supports dès le tournage, puis stockés sur des espaces d'échange contrôlés. L'accès aux galeries est protégé et les fichiers sont supprimés à votre demande.",
+      "qEn": "How is your event data secured?",
+      "aEn": "Rushes are backed up on two media on set, then stored in controlled exchange spaces. Gallery access is protected and files are deleted at your request."
+    },
+    {
+      "qFr": "Établissez-vous des devis détaillés ?",
+      "aFr": "Chaque devis précise le dispositif humain et technique, les livrables, le calendrier et les conditions. Aucun poste n'est laissé à l'interprétation.",
+      "qEn": "Do you provide detailed quotes?",
+      "aEn": "Every quote details the human and technical setup, deliverables, timeline and terms. No line item is left to interpretation."
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+@if (service(); as service) {
+  <app-page-hero
+    [kicker]="i18n.loc(service.tags.join(' · '), service.tagsEn.join(' · '))"
+    [title]="i18n.loc(service.title, service.titleEn)"
+    [lead]="i18n.loc(service.excerpt, service.excerptEn)"
+    [image]="service.image"
+    [parent]="{ path: '/services', label: 'nav.services' }"
+    [ctaLabel]="i18n.t('cta.requestProposal')"
+    [ctaPath]="'/devis'"
+    [ctaQueryParams]="{ service: service.slug }"
+  />
+
+  <section class="section section--paper service-intro">
+    <div class="shell split split--60-40">
+      <div appReveal="up">
+        <span class="eyebrow">{{ i18n.t('services.intro.eyebrow') }}</span>
+        <h2 class="h2">{{ i18n.loc('Une expertise pensées pour vos enjeux.', 'Expertise designed around your challenges.') }}</h2>
+        @if (detail(); as detail) {
+          <p class="lead">{{ i18n.loc(detail.introFr, detail.introEn) }}</p>
+        }
+        <div class="service-intro__tags">
+          @for (tag of (i18n.isFrench() ? service.tags : service.tagsEn); track tag) {
+            <span class="chip chip--solid">{{ tag }}</span>
+          }
+        </div>
+      </div>
+
+      <div class="service-intro__panel panel panel--framed" appReveal="right">
+        <span class="eyebrow">{{ i18n.t('services.detail.capabilities') }}</span>
+        <ul class="service-checklist">
+          @for (capability of capabilities(); track capability) {
+            <li>
+              <app-icon name="check" [size]="14" />
+              <span>{{ capability }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft service-capabilities">
+    <div class="shell">
+      <div class="service-capabilities__grid">
+        <article class="service-panel panel" appReveal="up">
+          <span class="icon-tile"><app-icon name="settings" [size]="22" /></span>
+          <h2 class="h3">{{ i18n.t('services.detail.equipment') }}</h2>
+          <ul class="service-list">
+            @for (item of equipment(); track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </article>
+
+        <article class="service-panel panel" appReveal="up" [revealDelay]="100">
+          <span class="icon-tile"><app-icon name="folder" [size]="22" /></span>
+          <h2 class="h3">{{ i18n.t('services.detail.deliverables') }}</h2>
+          <ul class="service-list">
+            @for (item of deliverables(); track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark on-dark service-process">
+    <div class="shell">
+      <div class="section-head" appReveal="up">
+        <div class="section-head__copy">
+          <span class="eyebrow eyebrow--light">{{ i18n.t('services.detail.process') }}</span>
+          <h2 class="h2">{{ i18n.t('home.process.title') }}</h2>
+          <p class="lead">{{ i18n.t('home.process.desc') }}</p>
+        </div>
+      </div>
+      <div class="process">
+        @for (step of steps(); track step.num) {
+          <article class="process__step">
+            <span class="process__num">{{ step.num }}</span>
+            <h3 class="process__title">{{ step.title }}</h3>
+            <p class="process__desc">{{ step.text }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  @if (gallery().length) {
+    <section class="section section--paper service-gallery">
+      <div class="shell">
+        <div class="section-head" appReveal="up">
+          <div class="section-head__copy">
+            <span class="eyebrow">{{ i18n.t('services.detail.gallery') }}</span>
+            <h2 class="h2">{{ i18n.loc('Un aperçu de notre travail.', 'A glimpse of our work.') }}</h2>
+          </div>
+          <button type="button" class="btn btn--ghost btn--sm" (click)="openLightbox(0)">
+            {{ i18n.t('cta.seeGallery') }}
+            <app-icon name="eye" [size]="15" />
+          </button>
+        </div>
+        <div class="service-gallery__grid">
+          @for (image of gallery(); track image.name + $index; let i = $index) {
+            <button type="button" class="service-gallery__item" (click)="openLightbox(i)" [attr.aria-label]="i18n.t('portfolio.open')">
+              <app-img [name]="image.name" [alt]="image.caption" sizes="(max-width: 800px) 100vw, 50vw" />
+              <span class="service-gallery__zoom"><app-icon name="eye" [size]="16" /></span>
+            </button>
+          }
+        </div>
+        <p class="service-gallery__note">{{ i18n.t('common.demoNote') }}</p>
+      </div>
+    </section>
+  }
+
+  <section class="section section--soft service-related">
+    <div class="shell">
+      <div class="section-head" appReveal="up">
+        <div class="section-head__copy">
+          <span class="eyebrow">{{ i18n.t('services.detail.otherServices') }}</span>
+          <h2 class="h2">{{ i18n.loc('Combinez les expertises.', 'Combine the expertise.') }}</h2>
+        </div>
+        <a [routerLink]="i18n.path('/services')" class="link-arrow">
+          {{ i18n.t('services.detail.allServices') }}
+          <app-icon name="arrow-right" [size]="15" />
+        </a>
+      </div>
+
+      <div class="grid-3">
+        @for (other of otherServices(); track other.slug; let i = $index) {
+          <a class="service-card" [routerLink]="[i18n.path('/services'), other.slug]" appReveal="up" [revealDelay]="i * 80">
+            <div class="service-card__media">
+              <app-img [name]="other.image" [alt]="i18n.loc(other.title, other.titleEn)" sizes="(max-width: 800px) 100vw, 33vw" />
+            </div>
+            <div class="service-card__body">
+              <span class="service-card__index">{{ i18n.loc(other.tags.join(' · '), other.tagsEn.join(' · ')) }}</span>
+              <h3>{{ i18n.loc(other.title, other.titleEn) }}</h3>
+              <p>{{ i18n.loc(other.excerpt, other.excerptEn) }}</p>
+              <span class="service-card__link">
+                {{ i18n.t('cta.viewDetails') }}
+                <span class="arrow-circle"><app-icon name="arrow-up-right" [size]="15" /></span>
+              </span>
+            </div>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+
+  <app-quote-cta />
+
+  <app-lightbox
+    [images]="gallery()"
+    [open]="lightboxOpen()"
+    [start]="lightboxIndex()"
+    (closed)="lightboxOpen.set(false)"
+  />
+} @else {
+  <app-page-hero
+    kicker="Erreur 404"
+    [title]="i18n.t('notFound.title')"
+    [lead]="i18n.t('notFound.desc')"
+    image="office-meeting"
+    [ctaLabel]="i18n.t('notFound.back')"
+    ctaPath="/"
+  />
+  <section class="section section--paper">
+    <div class="shell empty-state">
+      <p class="empty-state__title">{{ i18n.loc('Cette expertise n’existe pas.', 'This service does not exist.') }}</p>
+      <p>{{ i18n.loc('Consultez la liste complète de nos services.', 'Browse the complete list of our services.') }}</p>
+      <a [routerLink]="i18n.path('/services')" class="btn">{{ i18n.t('services.detail.allServices') }}</a>
+    </div>
+  </section>
+}

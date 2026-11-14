@@ -1,0 +1,76 @@
+/* ============================================================
+   SELECTA EMPIRE LIMITED — Design tokens
+   Palette: Blanc laiteux #F4F1E9 · Bleu Empire #2457A6 · Vantablack #050505
+   ============================================================ */
+
+:root {
+  /* Brand */
+  --paper: #f4f1e9;
+  --paper-soft: #faf8f3;
+  --paper-deep: #eae5d8;
+  --ink: #050505;
+  --ink-soft: #0d0d0e;
+  --empire: #2457a6;
+  --empire-deep: #173d78;
+  --empire-bright: #3a74cf;
+  --empire-soft: #5b8fd6;
+  --empire-wash: #dbe6f6;
+
+  /* Neutrals */
+  --muted: #6d6b63;
+  --muted-dark: #a9a69c;
+  --line: rgba(5, 5, 5, 0.13);
+  --line-strong: rgba(5, 5, 5, 0.24);
+  --line-light: rgba(244, 241, 233, 0.16);
+  --line-light-strong: rgba(244, 241, 233, 0.3);
+
+  /* Type */
+  --font-display: 'Sora', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-alt: 'Space Grotesk', 'Inter', sans-serif;
+
+  --fs-display: clamp(3.1rem, 7.6vw, 8rem);
+  --fs-h1: clamp(2.6rem, 5.2vw, 4.75rem);
+  --fs-h2: clamp(2rem, 3.7vw, 3.4rem);
+  --fs-h3: clamp(1.3rem, 1.9vw, 1.75rem);
+  --fs-h4: clamp(1.08rem, 1.3vw, 1.25rem);
+  --fs-lead: clamp(1.06rem, 1.25vw, 1.3rem);
+  --fs-body: 1.0625rem;
+  --fs-sm: 0.9375rem;
+  --fs-xs: 0.8125rem;
+  --fs-eyebrow: 0.72rem;
+
+  /* Spacing / layout */
+  --gutter: clamp(1.25rem, 4.6vw, 4.5rem);
+  --container: 1360px;
+  --section-y: clamp(4.5rem, 8.5vw, 9rem);
+  --section-y-sm: clamp(3.25rem, 6vw, 6rem);
+
+  /* Shape / depth */
+  --radius-xs: 2px;
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-sm: 0 10px 30px -18px rgba(5, 5, 5, 0.45);
+  --shadow-md: 0 30px 70px -40px rgba(5, 5, 5, 0.55);
+  --shadow-lg: 0 50px 120px -60px rgba(5, 5, 5, 0.65);
+
+  /* Motion */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 220ms;
+  --dur: 420ms;
+  --dur-slow: 900ms;
+
+  --header-h: 88px;
+  --topbar-h: 40px;
+
+  color-scheme: light;
+}
+
+@media (max-width: 960px) {
+  :root {
+    --header-h: 74px;
+    --topbar-h: 0px;
+  }
+}

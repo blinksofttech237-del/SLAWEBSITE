@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" role="img" aria-labelledby="t">
+  <title id="t">SELECTA EMPIRE — insigne SLA</title>
+  <rect width="140" height="140" rx="32" fill="#050505"/>
+  <g transform="translate(19.6 19.6) scale(0.72)" fill="none" stroke="#F4F1E9" stroke-width="11" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M58 38H30v30h28v33H30"/>
+    <path d="M72 38v63h26"/>
+    <path d="M104 101 116.5 46"/>
+    <path d="M130 101 117.5 46"/>
+    <path d="M107 82h18" stroke-width="9"/>
+  </g>
+  <g stroke="#5B8FD6" stroke-width="2" fill="none" opacity="0.85">
+    <path d="M8 24V8h16"/>
+    <path d="M116 8h16v16"/>
+    <path d="M132 116v16h-16"/>
+    <path d="M24 132H8v-16"/>
+  </g>
+</svg>
